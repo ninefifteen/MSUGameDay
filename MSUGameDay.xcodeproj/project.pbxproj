@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		45B114C419C358D40044CAED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B114C319C358D40044CAED /* main.m */; };
+		45B114C719C358D40044CAED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B114C619C358D40044CAED /* AppDelegate.m */; };
+		45B114CA19C358D40044CAED /* MSUGameDay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45B114C819C358D40044CAED /* MSUGameDay.xcdatamodeld */; };
+		45B114CD19C358D40044CAED /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B114CC19C358D40044CAED /* MasterViewController.m */; };
+		45B114D019C358D40044CAED /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B114CF19C358D40044CAED /* DetailViewController.m */; };
+		45B114D319C358D40044CAED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B114D119C358D40044CAED /* Main.storyboard */; };
+		45B114D519C358D40044CAED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B114D419C358D40044CAED /* Images.xcassets */; };
+		45B114D819C358D40044CAED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45B114D619C358D40044CAED /* LaunchScreen.xib */; };
+		45B114E419C358D40044CAED /* MSUGameDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B114E319C358D40044CAED /* MSUGameDayTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		45B114DE19C358D40044CAED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45B114B619C358D40044CAED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45B114BD19C358D40044CAED;
+			remoteInfo = MSUGameDay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		45B114BE19C358D40044CAED /* MSUGameDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSUGameDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45B114C219C358D40044CAED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45B114C319C358D40044CAED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		45B114C519C358D40044CAED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		45B114C619C358D40044CAED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		45B114C919C358D40044CAED /* MSUGameDay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MSUGameDay.xcdatamodel; sourceTree = "<group>"; };
+		45B114CB19C358D40044CAED /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		45B114CC19C358D40044CAED /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		45B114CE19C358D40044CAED /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		45B114CF19C358D40044CAED /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		45B114D219C358D40044CAED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		45B114D419C358D40044CAED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		45B114D719C358D40044CAED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		45B114DD19C358D40044CAED /* MSUGameDayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MSUGameDayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45B114E219C358D40044CAED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45B114E319C358D40044CAED /* MSUGameDayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSUGameDayTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45B114BB19C358D40044CAED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B114DA19C358D40044CAED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45B114B519C358D40044CAED = {
+			isa = PBXGroup;
+			children = (
+				45B114C019C358D40044CAED /* MSUGameDay */,
+				45B114E019C358D40044CAED /* MSUGameDayTests */,
+				45B114BF19C358D40044CAED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		45B114BF19C358D40044CAED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45B114BE19C358D40044CAED /* MSUGameDay.app */,
+				45B114DD19C358D40044CAED /* MSUGameDayTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45B114C019C358D40044CAED /* MSUGameDay */ = {
+			isa = PBXGroup;
+			children = (
+				45B114C519C358D40044CAED /* AppDelegate.h */,
+				45B114C619C358D40044CAED /* AppDelegate.m */,
+				45B114CB19C358D40044CAED /* MasterViewController.h */,
+				45B114CC19C358D40044CAED /* MasterViewController.m */,
+				45B114CE19C358D40044CAED /* DetailViewController.h */,
+				45B114CF19C358D40044CAED /* DetailViewController.m */,
+				45B114D119C358D40044CAED /* Main.storyboard */,
+				45B114D419C358D40044CAED /* Images.xcassets */,
+				45B114D619C358D40044CAED /* LaunchScreen.xib */,
+				45B114C819C358D40044CAED /* MSUGameDay.xcdatamodeld */,
+				45B114C119C358D40044CAED /* Supporting Files */,
+			);
+			path = MSUGameDay;
+			sourceTree = "<group>";
+		};
+		45B114C119C358D40044CAED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				45B114C219C358D40044CAED /* Info.plist */,
+				45B114C319C358D40044CAED /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45B114E019C358D40044CAED /* MSUGameDayTests */ = {
+			isa = PBXGroup;
+			children = (
+				45B114E319C358D40044CAED /* MSUGameDayTests.m */,
+				45B114E119C358D40044CAED /* Supporting Files */,
+			);
+			path = MSUGameDayTests;
+			sourceTree = "<group>";
+		};
+		45B114E119C358D40044CAED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				45B114E219C358D40044CAED /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		45B114BD19C358D40044CAED /* MSUGameDay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45B114E719C358D40044CAED /* Build configuration list for PBXNativeTarget "MSUGameDay" */;
+			buildPhases = (
+				45B114BA19C358D40044CAED /* Sources */,
+				45B114BB19C358D40044CAED /* Frameworks */,
+				45B114BC19C358D40044CAED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MSUGameDay;
+			productName = MSUGameDay;
+			productReference = 45B114BE19C358D40044CAED /* MSUGameDay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		45B114DC19C358D40044CAED /* MSUGameDayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45B114EA19C358D40044CAED /* Build configuration list for PBXNativeTarget "MSUGameDayTests" */;
+			buildPhases = (
+				45B114D919C358D40044CAED /* Sources */,
+				45B114DA19C358D40044CAED /* Frameworks */,
+				45B114DB19C358D40044CAED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45B114DF19C358D40044CAED /* PBXTargetDependency */,
+			);
+			name = MSUGameDayTests;
+			productName = MSUGameDayTests;
+			productReference = 45B114DD19C358D40044CAED /* MSUGameDayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		45B114B619C358D40044CAED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Shawn Seals";
+				TargetAttributes = {
+					45B114BD19C358D40044CAED = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					45B114DC19C358D40044CAED = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 45B114BD19C358D40044CAED;
+					};
+				};
+			};
+			buildConfigurationList = 45B114B919C358D40044CAED /* Build configuration list for PBXProject "MSUGameDay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 45B114B519C358D40044CAED;
+			productRefGroup = 45B114BF19C358D40044CAED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				45B114BD19C358D40044CAED /* MSUGameDay */,
+				45B114DC19C358D40044CAED /* MSUGameDayTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		45B114BC19C358D40044CAED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B114D319C358D40044CAED /* Main.storyboard in Resources */,
+				45B114D819C358D40044CAED /* LaunchScreen.xib in Resources */,
+				45B114D519C358D40044CAED /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B114DB19C358D40044CAED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		45B114BA19C358D40044CAED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B114D019C358D40044CAED /* DetailViewController.m in Sources */,
+				45B114CD19C358D40044CAED /* MasterViewController.m in Sources */,
+				45B114C719C358D40044CAED /* AppDelegate.m in Sources */,
+				45B114C419C358D40044CAED /* main.m in Sources */,
+				45B114CA19C358D40044CAED /* MSUGameDay.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B114D919C358D40044CAED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B114E419C358D40044CAED /* MSUGameDayTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		45B114DF19C358D40044CAED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45B114BD19C358D40044CAED /* MSUGameDay */;
+			targetProxy = 45B114DE19C358D40044CAED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		45B114D119C358D40044CAED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45B114D219C358D40044CAED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		45B114D619C358D40044CAED /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45B114D719C358D40044CAED /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		45B114E519C358D40044CAED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		45B114E619C358D40044CAED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		45B114E819C358D40044CAED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MSUGameDay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		45B114E919C358D40044CAED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MSUGameDay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		45B114EB19C358D40044CAED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MSUGameDayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSUGameDay.app/MSUGameDay";
+			};
+			name = Debug;
+		};
+		45B114EC19C358D40044CAED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MSUGameDayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSUGameDay.app/MSUGameDay";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45B114B919C358D40044CAED /* Build configuration list for PBXProject "MSUGameDay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B114E519C358D40044CAED /* Debug */,
+				45B114E619C358D40044CAED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45B114E719C358D40044CAED /* Build configuration list for PBXNativeTarget "MSUGameDay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B114E819C358D40044CAED /* Debug */,
+				45B114E919C358D40044CAED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		45B114EA19C358D40044CAED /* Build configuration list for PBXNativeTarget "MSUGameDayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B114EB19C358D40044CAED /* Debug */,
+				45B114EC19C358D40044CAED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		45B114C819C358D40044CAED /* MSUGameDay.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				45B114C919C358D40044CAED /* MSUGameDay.xcdatamodel */,
+			);
+			currentVersion = 45B114C919C358D40044CAED /* MSUGameDay.xcdatamodel */;
+			path = MSUGameDay.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 45B114B619C358D40044CAED /* Project object */;
+}

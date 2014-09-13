@@ -11,6 +11,7 @@
 #import "Event.h"
 #import "EventManager.h"
 #import "Constants.h"
+#import "SSRollingButtonScrollView.h"
 
 @interface MasterViewController () <UISearchResultsUpdating>
 

@@ -16,6 +16,8 @@
 {
     BOOL _isLoadingData;
     BOOL _updateAtStartUp;
+    
+    NSMutableArray *_filteredEventArray;
 }
 
 @end
@@ -34,6 +36,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _filteredEventArray = [[NSMutableArray alloc] init];
     
     NSTimeInterval timeSinceLastUpdate = 0;
     
@@ -104,30 +108,38 @@
     self.refreshControl.layer.zPosition = self.tableView.backgroundView.layer.zPosition + 1;
 }
 
+- (void)filterEventsForSearchString:(NSString *)searchString
+{
+    NSArray *keysToSearch = @[@"title",@"category",@"location",@"startDateString"];
+    [_filteredEventArray removeAllObjects];
+    
+    NSArray *searchWords = [searchString componentsSeparatedByString:@" "];
+    NSMutableArray *predicateArray = [NSMutableArray array];
+    
+    for (NSString *searchWord in searchWords) {
+        if ([searchWord length] > 0) {
+            NSString *predicateBuilder = [[NSString alloc] init];
+            
+            for (NSString *key in keysToSearch) {
+                NSString *escapedSearchWord = [searchWord stringByReplacingOccurrencesOfString:@"\'" withString:@"\\\'"];
+                
+                if (key != [keysToSearch lastObject]) {
+                    predicateBuilder = [predicateBuilder stringByAppendingString:[NSString stringWithFormat:@"SELF.%@ CONTAINS[c] '%@' OR ", key, escapedSearchWord]];
+                } else {
+                    predicateBuilder = [predicateBuilder stringByAppendingString:[NSString stringWithFormat:@"SELF.%@ CONTAINS[c] '%@'", key, escapedSearchWord]];
+                }
+            }
+            [predicateArray addObject:[NSPredicate predicateWithFormat:predicateBuilder]];
+        }
+    }
+    NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicateArray];
+    _filteredEventArray = [NSMutableArray arrayWithArray:[[self.fetchedResultsController fetchedObjects] filteredArrayUsingPredicate:predicate]];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)insertNewObject:(id)sender
-{
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-        
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-        
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
 }
 
 #pragma mark - Segues
@@ -153,7 +165,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (_fetchedResultsController != nil) {
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        
+        return [_filteredEventArray count];
+        
+    } else if (_fetchedResultsController != nil) {
         
         if ([self.fetchedResultsController.fetchedObjects count] > 0) {
             
@@ -189,13 +205,15 @@
         
         return cell;
         
-    } else if ([self.fetchedResultsController.fetchedObjects count] > 0) {
+    } else if (tableView == self.searchDisplayController.searchResultsTableView || [self.fetchedResultsController.fetchedObjects count] > 0) {
         
         static NSString *CellIdentifier = @"EventCell";
         UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         Event *event;
         
-        if ([self.fetchedResultsController.fetchedObjects count] > 0) {
+        if (tableView == self.searchDisplayController.searchResultsTableView) {
+            event = [_filteredEventArray objectAtIndex:indexPath.row];
+        } else if ([self.fetchedResultsController.fetchedObjects count] > 0) {
             event = [self.fetchedResultsController objectAtIndexPath:indexPath];
         }
         
@@ -232,6 +250,27 @@
 {
     // Return NO if you do not want the specified item to be editable.
     return NO;
+}
+
+#pragma mark - UISearchDisplayController Delegate Methods
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterEventsForSearchString:searchString];
+    
+    // YES if the display controller should reload the data in its table view, otherwise NO.
+    return YES;
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
+{
+    // YES if the display controller should reload the data in its table view, otherwise NO.
+    return YES;
+}
+
+- (void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView
+{
+    //tableView.backgroundView = _backgroundView;
 }
 
 #pragma mark - Fetched results controller

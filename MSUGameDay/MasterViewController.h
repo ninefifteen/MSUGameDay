@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 
 @class DetailViewController;
+@class MyNavBarView;
 
 @interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 

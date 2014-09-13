@@ -25,6 +25,8 @@
 		45B1150519C39F7B0044CAED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B1150419C39F7B0044CAED /* UIKit.framework */; };
 		45B1150719C39F890044CAED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B1150619C39F890044CAED /* Foundation.framework */; };
 		45B1150B19C4B3CE0044CAED /* SSRollingButtonScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B1150A19C4B3CE0044CAED /* SSRollingButtonScrollView.m */; };
+		45B1150D19C4C5370044CAED /* MyNavBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45B1150C19C4C5370044CAED /* MyNavBarView.xib */; };
+		45B1151019C4CE680044CAED /* MyNavBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B1150F19C4CE680044CAED /* MyNavBarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,9 @@
 		45B1150619C39F890044CAED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45B1150919C4B3CE0044CAED /* SSRollingButtonScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSRollingButtonScrollView.h; sourceTree = "<group>"; };
 		45B1150A19C4B3CE0044CAED /* SSRollingButtonScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSRollingButtonScrollView.m; sourceTree = "<group>"; };
+		45B1150C19C4C5370044CAED /* MyNavBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyNavBarView.xib; sourceTree = "<group>"; };
+		45B1150E19C4CE680044CAED /* MyNavBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavBarView.h; sourceTree = "<group>"; };
+		45B1150F19C4CE680044CAED /* MyNavBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavBarView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +203,9 @@
 				45B114D119C358D40044CAED /* Main.storyboard */,
 				45B1150919C4B3CE0044CAED /* SSRollingButtonScrollView.h */,
 				45B1150A19C4B3CE0044CAED /* SSRollingButtonScrollView.m */,
+				45B1150C19C4C5370044CAED /* MyNavBarView.xib */,
+				45B1150E19C4CE680044CAED /* MyNavBarView.h */,
+				45B1150F19C4CE680044CAED /* MyNavBarView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -290,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45B1150D19C4C5370044CAED /* MyNavBarView.xib in Resources */,
 				45B114D319C358D40044CAED /* Main.storyboard in Resources */,
 				45B114D819C358D40044CAED /* LaunchScreen.xib in Resources */,
 				45B114D519C358D40044CAED /* Images.xcassets in Resources */,
@@ -319,6 +328,7 @@
 				45B114C719C358D40044CAED /* AppDelegate.m in Sources */,
 				45B114C419C358D40044CAED /* main.m in Sources */,
 				45B114F919C37BC80044CAED /* EventManager.m in Sources */,
+				45B1151019C4CE680044CAED /* MyNavBarView.m in Sources */,
 				45B114CA19C358D40044CAED /* MSUGameDay.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

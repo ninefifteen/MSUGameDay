@@ -238,7 +238,7 @@
     NSError *saveError;
     [self.managedObjectContext save:&saveError];
     if (saveError) {
-        NSLog(@"Core Data Error: %@", [saveError localizedDescription]);
+        NSLog(@"Core Data Error in updateModelWithEventsDictionaries:calendarCorrections: %@", [saveError localizedDescription]);
     }
     
     [self saveRefreshTime:[NSDate date]];
@@ -260,7 +260,7 @@
     NSError *saveError;
     [self.managedObjectContext save:&saveError];
     if (saveError) {
-        NSLog(@"Core Data Error: %@", [saveError localizedDescription]);
+        NSLog(@"Core Data Error in deleteAllData: %@", [saveError localizedDescription]);
     }
 }
 

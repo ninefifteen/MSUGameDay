@@ -16,6 +16,14 @@
 		45B114D519C358D40044CAED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B114D419C358D40044CAED /* Images.xcassets */; };
 		45B114D819C358D40044CAED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45B114D619C358D40044CAED /* LaunchScreen.xib */; };
 		45B114E419C358D40044CAED /* MSUGameDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B114E319C358D40044CAED /* MSUGameDayTests.m */; };
+		45B114F619C377EE0044CAED /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B114F519C377EE0044CAED /* Event.m */; };
+		45B114F919C37BC80044CAED /* EventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B114F819C37BC80044CAED /* EventManager.m */; };
+		45B114FC19C38A660044CAED /* RssFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B114FB19C38A660044CAED /* RssFeedParser.m */; };
+		45B114FF19C39F1C0044CAED /* CalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B114FE19C39F1C0044CAED /* CalendarManager.m */; };
+		45B1150119C39F660044CAED /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B1150019C39F660044CAED /* EventKit.framework */; };
+		45B1150319C39F6F0044CAED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B1150219C39F6F0044CAED /* CoreGraphics.framework */; };
+		45B1150519C39F7B0044CAED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B1150419C39F7B0044CAED /* UIKit.framework */; };
+		45B1150719C39F890044CAED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B1150619C39F890044CAED /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +53,19 @@
 		45B114DD19C358D40044CAED /* MSUGameDayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MSUGameDayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B114E219C358D40044CAED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45B114E319C358D40044CAED /* MSUGameDayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSUGameDayTests.m; sourceTree = "<group>"; };
+		45B114F319C3716E0044CAED /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		45B114F419C377EE0044CAED /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		45B114F519C377EE0044CAED /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		45B114F719C37BC80044CAED /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
+		45B114F819C37BC80044CAED /* EventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventManager.m; sourceTree = "<group>"; };
+		45B114FA19C38A660044CAED /* RssFeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RssFeedParser.h; sourceTree = "<group>"; };
+		45B114FB19C38A660044CAED /* RssFeedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RssFeedParser.m; sourceTree = "<group>"; };
+		45B114FD19C39F1B0044CAED /* CalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarManager.h; sourceTree = "<group>"; };
+		45B114FE19C39F1C0044CAED /* CalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarManager.m; sourceTree = "<group>"; };
+		45B1150019C39F660044CAED /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		45B1150219C39F6F0044CAED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		45B1150419C39F7B0044CAED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		45B1150619C39F890044CAED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +73,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45B1150719C39F890044CAED /* Foundation.framework in Frameworks */,
+				45B1150519C39F7B0044CAED /* UIKit.framework in Frameworks */,
+				45B1150319C39F6F0044CAED /* CoreGraphics.framework in Frameworks */,
+				45B1150119C39F660044CAED /* EventKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +93,10 @@
 		45B114B519C358D40044CAED = {
 			isa = PBXGroup;
 			children = (
+				45B1150619C39F890044CAED /* Foundation.framework */,
+				45B1150419C39F7B0044CAED /* UIKit.framework */,
+				45B1150219C39F6F0044CAED /* CoreGraphics.framework */,
+				45B1150019C39F660044CAED /* EventKit.framework */,
 				45B114C019C358D40044CAED /* MSUGameDay */,
 				45B114E019C358D40044CAED /* MSUGameDayTests */,
 				45B114BF19C358D40044CAED /* Products */,
@@ -86,13 +115,11 @@
 		45B114C019C358D40044CAED /* MSUGameDay */ = {
 			isa = PBXGroup;
 			children = (
-				45B114C519C358D40044CAED /* AppDelegate.h */,
-				45B114C619C358D40044CAED /* AppDelegate.m */,
-				45B114CB19C358D40044CAED /* MasterViewController.h */,
-				45B114CC19C358D40044CAED /* MasterViewController.m */,
-				45B114CE19C358D40044CAED /* DetailViewController.h */,
-				45B114CF19C358D40044CAED /* DetailViewController.m */,
-				45B114D119C358D40044CAED /* Main.storyboard */,
+				45B114ED19C36FC00044CAED /* Model */,
+				45B114F119C36FF10044CAED /* View */,
+				45B114F019C36FE70044CAED /* Controller */,
+				45B114EE19C36FCB0044CAED /* API */,
+				45B114F219C3708B0044CAED /* Constants */,
 				45B114D419C358D40044CAED /* Images.xcassets */,
 				45B114D619C358D40044CAED /* LaunchScreen.xib */,
 				45B114C819C358D40044CAED /* MSUGameDay.xcdatamodeld */,
@@ -125,6 +152,57 @@
 				45B114E219C358D40044CAED /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45B114ED19C36FC00044CAED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				45B114F419C377EE0044CAED /* Event.h */,
+				45B114F519C377EE0044CAED /* Event.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		45B114EE19C36FCB0044CAED /* API */ = {
+			isa = PBXGroup;
+			children = (
+				45B114F719C37BC80044CAED /* EventManager.h */,
+				45B114F819C37BC80044CAED /* EventManager.m */,
+				45B114FD19C39F1B0044CAED /* CalendarManager.h */,
+				45B114FE19C39F1C0044CAED /* CalendarManager.m */,
+				45B114FA19C38A660044CAED /* RssFeedParser.h */,
+				45B114FB19C38A660044CAED /* RssFeedParser.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		45B114F019C36FE70044CAED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				45B114C519C358D40044CAED /* AppDelegate.h */,
+				45B114C619C358D40044CAED /* AppDelegate.m */,
+				45B114CB19C358D40044CAED /* MasterViewController.h */,
+				45B114CC19C358D40044CAED /* MasterViewController.m */,
+				45B114CE19C358D40044CAED /* DetailViewController.h */,
+				45B114CF19C358D40044CAED /* DetailViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		45B114F119C36FF10044CAED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				45B114D119C358D40044CAED /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		45B114F219C3708B0044CAED /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				45B114F319C3716E0044CAED /* Constants.h */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,10 +305,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45B114F619C377EE0044CAED /* Event.m in Sources */,
 				45B114D019C358D40044CAED /* DetailViewController.m in Sources */,
+				45B114FF19C39F1C0044CAED /* CalendarManager.m in Sources */,
 				45B114CD19C358D40044CAED /* MasterViewController.m in Sources */,
+				45B114FC19C38A660044CAED /* RssFeedParser.m in Sources */,
 				45B114C719C358D40044CAED /* AppDelegate.m in Sources */,
 				45B114C419C358D40044CAED /* main.m in Sources */,
+				45B114F919C37BC80044CAED /* EventManager.m in Sources */,
 				45B114CA19C358D40044CAED /* MSUGameDay.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

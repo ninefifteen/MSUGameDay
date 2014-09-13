@@ -12,13 +12,13 @@
 #import "EventManager.h"
 #import "Constants.h"
 
-@interface MasterViewController ()
-{
-    BOOL _isLoadingData;
-    BOOL _updateAtStartUp;
-    
-    NSMutableArray *_filteredEventArray;
-}
+@interface MasterViewController () <UISearchResultsUpdating>
+
+    @property (nonatomic) BOOL isLoadingData;
+    @property (nonatomic) BOOL updateAtStartUp;
+
+    @property (nonatomic, strong) UISearchController *searchController;
+    @property (nonatomic, strong) NSMutableArray *filteredEvents;
 
 @end
 
@@ -37,7 +37,9 @@
 {
     [super viewDidLoad];
     
-    _filteredEventArray = [[NSMutableArray alloc] init];
+    self.filteredEvents = [[NSMutableArray alloc] init];
+    
+    [self configureSearchController];
     
     NSTimeInterval timeSinceLastUpdate = 0;
     
@@ -51,26 +53,43 @@
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"eventsRefreshTime"] == nil || timeSinceLastUpdate > kTimeIntervalBetweenAutomaticUpdates) {
         
-        _updateAtStartUp = YES;
+        self.updateAtStartUp = YES;
         [self updateEventData];
         
     } else {
         
-        _updateAtStartUp = NO;
+        self.updateAtStartUp = NO;
         [self performFetch];
     }
 }
 
+- (void)configureSearchController
+{
+    UITableViewController *searchResultsController = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
+    searchResultsController.tableView.dataSource = self;
+    searchResultsController.tableView.delegate = self;
+    
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:searchResultsController];
+    
+    self.searchController.searchResultsUpdater = self;
+    
+    self.searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x, self.searchController.searchBar.frame.origin.y, self.searchController.searchBar.frame.size.width, 44.0);
+    
+    self.tableView.tableHeaderView = self.searchController.searchBar;
+    
+    self.definesPresentationContext = YES;
+}
+
 - (void)updateEventData
 {
-    _isLoadingData = YES;
+    self.isLoadingData = YES;
     
     if (_fetchedResultsController != nil) {
         _fetchedResultsController = nil;
         [self.tableView reloadData];
     }
     
-    if (!_updateAtStartUp) {
+    if (!self.updateAtStartUp) {
         [self.refreshControl beginRefreshing];
     }
     
@@ -80,16 +99,16 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                if (!_updateAtStartUp) {
+                if (!self.updateAtStartUp) {
                     [self.refreshControl endRefreshing];
                 }
                 
                 if (self.refreshControl == nil) {
-                    [self addRefreshControl];
+                    [self configureRefreshControl];
                 }
                 
-                _isLoadingData = NO;
-                _updateAtStartUp = NO;
+                self.isLoadingData = NO;
+                self.updateAtStartUp = NO;
                 
                 [self performFetch];
             });
@@ -100,40 +119,12 @@
     }];
 }
 
-- (void)addRefreshControl
+- (void)configureRefreshControl
 {
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(updateEventData) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
     self.refreshControl.layer.zPosition = self.tableView.backgroundView.layer.zPosition + 1;
-}
-
-- (void)filterEventsForSearchString:(NSString *)searchString
-{
-    NSArray *keysToSearch = @[@"title",@"category",@"location",@"startDateString"];
-    [_filteredEventArray removeAllObjects];
-    
-    NSArray *searchWords = [searchString componentsSeparatedByString:@" "];
-    NSMutableArray *predicateArray = [NSMutableArray array];
-    
-    for (NSString *searchWord in searchWords) {
-        if ([searchWord length] > 0) {
-            NSString *predicateBuilder = [[NSString alloc] init];
-            
-            for (NSString *key in keysToSearch) {
-                NSString *escapedSearchWord = [searchWord stringByReplacingOccurrencesOfString:@"\'" withString:@"\\\'"];
-                
-                if (key != [keysToSearch lastObject]) {
-                    predicateBuilder = [predicateBuilder stringByAppendingString:[NSString stringWithFormat:@"SELF.%@ CONTAINS[c] '%@' OR ", key, escapedSearchWord]];
-                } else {
-                    predicateBuilder = [predicateBuilder stringByAppendingString:[NSString stringWithFormat:@"SELF.%@ CONTAINS[c] '%@'", key, escapedSearchWord]];
-                }
-            }
-            [predicateArray addObject:[NSPredicate predicateWithFormat:predicateBuilder]];
-        }
-    }
-    NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicateArray];
-    _filteredEventArray = [NSMutableArray arrayWithArray:[[self.fetchedResultsController fetchedObjects] filteredArrayUsingPredicate:predicate]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -165,9 +156,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
+    if (tableView == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
         
-        return [_filteredEventArray count];
+        return [self.filteredEvents count];
         
     } else if (_fetchedResultsController != nil) {
         
@@ -186,7 +177,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_updateAtStartUp) {
+    if (self.updateAtStartUp) {
         static NSString *CellIdentifier = @"LoadingCell";
         UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
@@ -205,14 +196,14 @@
         
         return cell;
         
-    } else if (tableView == self.searchDisplayController.searchResultsTableView || [self.fetchedResultsController.fetchedObjects count] > 0) {
+    } else if (tableView == ((UITableViewController *)self.searchController.searchResultsController).tableView || [self.fetchedResultsController.fetchedObjects count] > 0) {
         
         static NSString *CellIdentifier = @"EventCell";
         UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         Event *event;
         
-        if (tableView == self.searchDisplayController.searchResultsTableView) {
-            event = [_filteredEventArray objectAtIndex:indexPath.row];
+        if (tableView == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
+            event = [self.filteredEvents objectAtIndex:indexPath.row];
         } else if ([self.fetchedResultsController.fetchedObjects count] > 0) {
             event = [self.fetchedResultsController objectAtIndexPath:indexPath];
         }
@@ -239,7 +230,7 @@
         static NSString *CellIdentifier = @"NoResultsCell";
         UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
-        if (indexPath.row == 0 && !_isLoadingData) {
+        if (indexPath.row == 0 && !self.isLoadingData) {
             cell.textLabel.text = @"No Results";
         }
         return cell;
@@ -250,27 +241,6 @@
 {
     // Return NO if you do not want the specified item to be editable.
     return NO;
-}
-
-#pragma mark - UISearchDisplayController Delegate Methods
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
-{
-    [self filterEventsForSearchString:searchString];
-    
-    // YES if the display controller should reload the data in its table view, otherwise NO.
-    return YES;
-}
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
-{
-    // YES if the display controller should reload the data in its table view, otherwise NO.
-    return YES;
-}
-
-- (void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView
-{
-    //tableView.backgroundView = _backgroundView;
 }
 
 #pragma mark - Fetched results controller
@@ -309,6 +279,47 @@
     }
     
     [self.tableView reloadData];
+}
+
+#pragma mark - UISearchResultsUpdating
+
+-(void)updateSearchResultsForSearchController:(UISearchController *)searchController
+{
+    NSString *searchString = [self.searchController.searchBar text];
+    
+    [self filterEventsForSearchString:searchString];
+    
+    [((UITableViewController *)self.searchController.searchResultsController).tableView reloadData];
+}
+
+#pragma mark - Content Filtering
+
+- (void)filterEventsForSearchString:(NSString *)searchString
+{
+    NSArray *keysToSearch = @[@"title",@"category",@"location",@"startDateString"];
+    [self.filteredEvents removeAllObjects];
+    
+    NSArray *searchWords = [searchString componentsSeparatedByString:@" "];
+    NSMutableArray *predicateArray = [NSMutableArray array];
+    
+    for (NSString *searchWord in searchWords) {
+        if ([searchWord length] > 0) {
+            NSString *predicateBuilder = [[NSString alloc] init];
+            
+            for (NSString *key in keysToSearch) {
+                NSString *escapedSearchWord = [searchWord stringByReplacingOccurrencesOfString:@"\'" withString:@"\\\'"];
+                
+                if (key != [keysToSearch lastObject]) {
+                    predicateBuilder = [predicateBuilder stringByAppendingString:[NSString stringWithFormat:@"SELF.%@ CONTAINS[c] '%@' OR ", key, escapedSearchWord]];
+                } else {
+                    predicateBuilder = [predicateBuilder stringByAppendingString:[NSString stringWithFormat:@"SELF.%@ CONTAINS[c] '%@'", key, escapedSearchWord]];
+                }
+            }
+            [predicateArray addObject:[NSPredicate predicateWithFormat:predicateBuilder]];
+        }
+    }
+    NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicateArray];
+    self.filteredEvents = [NSMutableArray arrayWithArray:[[self.fetchedResultsController fetchedObjects] filteredArrayUsingPredicate:predicate]];
 }
 
 @end

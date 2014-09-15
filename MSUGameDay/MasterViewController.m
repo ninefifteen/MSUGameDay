@@ -176,7 +176,8 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        [controller setDetailItem:object];
+        controller.event = (Event *)object;
+        controller.managedObjectContext = self.managedObjectContext;
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
@@ -265,6 +266,26 @@
             cell.textLabel.text = @"No Results";
         }
         return cell;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *category = [[NSString alloc] init];
+    
+    if (tableView == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
+        Event *event = [self.filteredEvents objectAtIndex:indexPath.row];
+        category = event.category;
+    } else {
+        Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        category = event.category;
+    }
+    
+    
+    if ([category isEqualToString:@"Men's Track"] || [category isEqualToString:@"Women's Track"] || [category isEqualToString:@"Men's Cross Country"] || [category isEqualToString:@"Women's Cross Country"] || [category isEqualToString:@"Men's Golf"] || [category isEqualToString:@"Women's Golf"] || [category isEqualToString:@"NCAA"] ) {
+        [self performSegueWithIdentifier:@"EventDetailTypeTwoTableView" sender:tableView];
+    } else {
+        [self performSegueWithIdentifier:@"EventDetailTypeOneTableView" sender:tableView];
     }
 }
 

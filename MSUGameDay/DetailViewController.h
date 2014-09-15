@@ -7,11 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CalendarManager.h"
+#import "Event.h"
 
 @interface DetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) Event *event;
+
+@property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *gameStartTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *gameLocationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addEventToCalendarLabel;
+
+- (void)addEventToCalendar;
 
 @end
 

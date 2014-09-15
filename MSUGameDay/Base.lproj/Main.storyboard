@@ -81,7 +81,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventCell" textLabel="Arm-wq-HPj" detailTextLabel="CWz-4C-Of6" style="IBUITableViewCellStyleSubtitle" id="WCw-Qf-5nD">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventCell" textLabel="Arm-wq-HPj" detailTextLabel="CWz-4C-Of6" style="IBUITableViewCellStyleSubtitle" id="WCw-Qf-5nD">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
@@ -160,11 +160,65 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Zdf-7t-Un8">
                         <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="pPx-uR-o5c">
+                            <rect key="frame" x="16" y="6" width="568" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kE3-zR-ucm">
+                                    <rect key="frame" x="0.0" y="0.0" width="20" height="30"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="fUU-dX-mgv"/>
+                                    </constraints>
+                                    <state key="normal" title="❮">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCX-yD-omJ">
+                                    <rect key="frame" x="548" y="0.0" width="20" height="30"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <state key="normal" title="❯">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XGl-uu-2Uk">
+                                    <rect key="frame" x="20" y="0.0" width="528" height="33"/>
+                                    <subviews>
+                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gO6-iI-52l" customClass="SSRollingButtonScrollView">
+                                            <rect key="frame" x="0.0" y="0.0" width="528" height="33"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </scrollView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="gO6-iI-52l" secondAttribute="trailing" id="gfo-jK-0K4"/>
+                                        <constraint firstAttribute="bottom" secondItem="gO6-iI-52l" secondAttribute="bottom" id="rpv-yM-FSk"/>
+                                        <constraint firstItem="gO6-iI-52l" firstAttribute="leading" secondItem="XGl-uu-2Uk" secondAttribute="leading" id="vEl-6D-wV4"/>
+                                        <constraint firstItem="gO6-iI-52l" firstAttribute="top" secondItem="XGl-uu-2Uk" secondAttribute="top" id="wMU-j8-Kfp"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="kE3-zR-ucm" firstAttribute="top" secondItem="pPx-uR-o5c" secondAttribute="top" id="6OR-fA-VUT"/>
+                                <constraint firstItem="XGl-uu-2Uk" firstAttribute="top" secondItem="kE3-zR-ucm" secondAttribute="top" id="Cmc-a0-c0H"/>
+                                <constraint firstItem="XGl-uu-2Uk" firstAttribute="leading" secondItem="kE3-zR-ucm" secondAttribute="trailing" id="MkG-hG-rhk"/>
+                                <constraint firstItem="fCX-yD-omJ" firstAttribute="leading" secondItem="XGl-uu-2Uk" secondAttribute="trailing" id="PMB-3A-Stu"/>
+                                <constraint firstAttribute="bottom" secondItem="XGl-uu-2Uk" secondAttribute="bottom" id="Tzb-a0-ITg"/>
+                                <constraint firstItem="kE3-zR-ucm" firstAttribute="baseline" secondItem="fCX-yD-omJ" secondAttribute="baseline" id="YqO-8w-oQR"/>
+                                <constraint firstAttribute="trailing" secondItem="fCX-yD-omJ" secondAttribute="trailing" id="dCJ-VI-MA4"/>
+                                <constraint firstItem="XGl-uu-2Uk" firstAttribute="centerX" secondItem="pPx-uR-o5c" secondAttribute="centerX" id="s72-54-JJP"/>
+                                <constraint firstItem="kE3-zR-ucm" firstAttribute="leading" secondItem="pPx-uR-o5c" secondAttribute="leading" id="sYE-Ri-OlM"/>
+                            </constraints>
+                        </view>
                     </navigationItem>
+                    <connections>
+                        <outlet property="rollingButtonScrollView" destination="gO6-iI-52l" id="0ow-lV-sAW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="846" y="-630"/>
+            <point key="canvasLocation" x="1010" y="-630"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">

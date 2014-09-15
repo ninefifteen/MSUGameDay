@@ -41,7 +41,8 @@
     
     self.filteredEvents = [[NSMutableArray alloc] init];
     
-    [self configureMyNavBarView];
+    //[self configureMyNavBarView];
+    [self configureRollingButtonScroller];
     [self configureSearchController];
     
     NSTimeInterval timeSinceLastUpdate = 0;
@@ -66,6 +67,20 @@
     }
 }
 
+- (void)configureRollingButtonScroller
+{
+    NSArray *sportsCategoriesForButtons = @[@"Volleyball", @"All Sports", @"Basketball", @"X-Country", @"Football", @"Golf", @"Soccer", @"Softball", @"Tennis", @"Track"];
+    
+    self.rollingButtonScrollView.fixedButtonWidth = 88.0f;
+    self.rollingButtonScrollView.spacingBetweenButtons = 2.0f;
+    self.rollingButtonScrollView.buttonCenterFont = [UIFont boldSystemFontOfSize:18];
+    self.rollingButtonScrollView.buttonNotCenterFont = [UIFont systemFontOfSize:13];
+    self.rollingButtonScrollView.notCenterButtonTextColor = [UIColor grayColor];
+    self.rollingButtonScrollView.centerButtonTextColor = MSU_GOLD_COLOR;
+    self.rollingButtonScrollView.stopOnCenter = YES;
+    [self.rollingButtonScrollView createButtonArrayWithButtonTitles:sportsCategoriesForButtons andLayoutStyle:SShorizontalLayout];
+}
+
 - (void)configureMyNavBarView
 {
     NSArray *sportsCategoriesForButtons = @[@"Volleyball", @"All Sports", @"Basketball", @"X-Country", @"Football", @"Golf", @"Soccer", @"Softball", @"Tennis", @"Track"];
@@ -75,7 +90,7 @@
                                                                                 self.navigationController.navigationBar.bounds.size.height)];
         
     myNavBarView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.navigationController.navigationBar addSubview:myNavBarView];
+    //[self.navigationController.navigationBar addSubview:myNavBarView];
     
     myNavBarView.rollingButtonScrollView.fixedButtonWidth = 88.0f;
     myNavBarView.rollingButtonScrollView.spacingBetweenButtons = 2.0f;

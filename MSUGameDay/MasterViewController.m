@@ -174,9 +174,9 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        controller.event = (Event *)object;
+        controller.event = event;
         controller.managedObjectContext = self.managedObjectContext;
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
@@ -194,12 +194,16 @@
 {
     if (tableView == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
         
-        return [self.filteredEvents count];
+        if ([self.filteredEvents count] > 0) {
+            return [self.filteredEvents count];
+        } else {
+            return 1;
+        }
+        
         
     } else if (_fetchedResultsController != nil) {
         
         if ([self.fetchedResultsController.fetchedObjects count] > 0) {
-            
             return [self.fetchedResultsController.fetchedObjects count];
         } else {
             return 1;
@@ -228,65 +232,72 @@
         
         return cell;
         
-    } else if (tableView == ((UITableViewController *)self.searchController.searchResultsController).tableView || [self.fetchedResultsController.fetchedObjects count] > 0) {
+    } else if (tableView == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
         
-        static NSString *CellIdentifier = @"EventCell";
-        UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-        Event *event;
-        
-        if (tableView == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
-            event = [self.filteredEvents objectAtIndex:indexPath.row];
-        } else if ([self.fetchedResultsController.fetchedObjects count] > 0) {
-            event = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        }
-        
-        cell.textLabel.text = event.title;
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        //[dateFormatter setDateFormat:@"EEE, MMM d, yyyy"];
-        [dateFormatter setDateStyle:NSDateFormatterShortStyle];
-        
-        NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
-        [timeFormatter setTimeStyle:NSDateFormatterShortStyle];
-        
-        NSString *dateString;
-        if (event.startDate != nil) {
-            dateString = [NSString stringWithFormat:@"%@ %@", [dateFormatter stringFromDate:event.startDate], [timeFormatter stringFromDate:event.startDate]];
+        if ([self.filteredEvents count] > 0) {
+            
+            static NSString *CellIdentifier = @"EventCell";
+            UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+            Event *event = [self.filteredEvents objectAtIndex:indexPath.row];
+            return [self configureCell:cell forEvent:event];
+            
         } else {
-            dateString = @"TBA";
+            
+            static NSString *CellIdentifier = @"NoResultsCell";
+            UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+            
+            if (indexPath.row == 0 && !self.isLoadingData) {
+                cell.textLabel.text = @"No Results";
+            }
+            return cell;
         }
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ in %@", dateString, event.location];
-        
-        return cell;
         
     } else {
-        static NSString *CellIdentifier = @"NoResultsCell";
-        UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
-        if (indexPath.row == 0 && !self.isLoadingData) {
-            cell.textLabel.text = @"No Results";
+        if ([self.fetchedResultsController.fetchedObjects count] > 0) {
+            
+            static NSString *CellIdentifier = @"EventCell";
+            UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+            Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+            return [self configureCell:cell forEvent:event];
+            
+        } else {
+            
+            static NSString *CellIdentifier = @"NoResultsCell";
+            UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+            
+            if (indexPath.row == 0 && !self.isLoadingData) {
+                cell.textLabel.text = @"No Results";
+            }
+            return cell;
         }
-        return cell;
     }
+}
+
+- (UITableViewCell *)configureCell:(UITableViewCell *)cell forEvent:(Event *)event
+{
+    cell.textLabel.text = event.title;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //[dateFormatter setDateFormat:@"EEE, MMM d, yyyy"];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    
+    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
+    [timeFormatter setTimeStyle:NSDateFormatterShortStyle];
+    
+    NSString *dateString;
+    if (event.startDate != nil) {
+        dateString = [NSString stringWithFormat:@"%@ %@", [dateFormatter stringFromDate:event.startDate], [timeFormatter stringFromDate:event.startDate]];
+    } else {
+        dateString = @"TBA";
+    }
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ in %@", dateString, event.location];
+    
+    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *category = [[NSString alloc] init];
-    
-    if (tableView == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
-        Event *event = [self.filteredEvents objectAtIndex:indexPath.row];
-        category = event.category;
-    } else {
-        Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        category = event.category;
-    }
-    
-    
-    if ([category isEqualToString:@"Men's Track"] || [category isEqualToString:@"Women's Track"] || [category isEqualToString:@"Men's Cross Country"] || [category isEqualToString:@"Women's Cross Country"] || [category isEqualToString:@"Men's Golf"] || [category isEqualToString:@"Women's Golf"] || [category isEqualToString:@"NCAA"] ) {
-        [self performSegueWithIdentifier:@"EventDetailTypeTwoTableView" sender:tableView];
-    } else {
-        [self performSegueWithIdentifier:@"EventDetailTypeOneTableView" sender:tableView];
-    }
+    [self performSegueWithIdentifier:@"showDetail" sender:tableView];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

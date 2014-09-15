@@ -19,8 +19,7 @@
 
 static NSString * const kHomeCityState = @"Wichita Falls, TX";
 
-//static int const kTimeIntervalBetweenAutomaticUpdates = 86400;   // 24 hours
-static int const kTimeIntervalBetweenAutomaticUpdates = 4;   // 24 hours
+static int const kTimeIntervalBetweenAutomaticUpdates = 86400;   // 24 hours
 
 
 #endif

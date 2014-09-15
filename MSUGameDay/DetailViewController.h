@@ -10,12 +10,11 @@
 #import "CalendarManager.h"
 #import "Event.h"
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UITableViewController
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) Event *event;
 
-@property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *gameStartTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *gameLocationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addEventToCalendarLabel;

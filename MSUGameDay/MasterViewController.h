@@ -11,7 +11,6 @@
 
 @class DetailViewController;
 @class SSRollingButtonScrollView;
-@class MyNavBarView;
 
 @interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 

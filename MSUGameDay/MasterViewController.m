@@ -18,6 +18,7 @@
 
     @property (nonatomic) BOOL isLoadingData;
     @property (nonatomic) BOOL updateAtStartUp;
+    @property (nonatomic) CGFloat navBarWidth;
 
     @property (nonatomic, strong) UISearchController *searchController;
     @property (nonatomic, strong) NSMutableArray *filteredEvents;
@@ -42,6 +43,9 @@
     self.filteredEvents = [[NSMutableArray alloc] init];
     
     //[self configureMyNavBarView];
+    self.navBarWidth = 0.0;
+    //self.navBarWidth = self.navigationController.navigationBar.bounds.size.width;
+    //NSLog(@"viewDidLoad navBarWidth: %f", self.navBarWidth);
     [self configureRollingButtonScroller];
     [self configureSearchController];
     
@@ -81,7 +85,7 @@
     [self.rollingButtonScrollView createButtonArrayWithButtonTitles:sportsCategoriesForButtons andLayoutStyle:SShorizontalLayout];
 }
 
-- (void)configureMyNavBarView
+/*- (void)configureMyNavBarView
 {
     NSArray *sportsCategoriesForButtons = @[@"Volleyball", @"All Sports", @"Basketball", @"X-Country", @"Football", @"Golf", @"Soccer", @"Softball", @"Tennis", @"Track"];
     
@@ -101,7 +105,7 @@
     myNavBarView.rollingButtonScrollView.stopOnCenter = YES;
     [myNavBarView.rollingButtonScrollView createButtonArrayWithButtonTitles:sportsCategoriesForButtons andLayoutStyle:SShorizontalLayout];
     myNavBarView.rollingButtonScrollView.ssRollingButtonScrollViewDelegate = self;
-}
+}*/
 
 - (void)configureSearchController
 {
@@ -165,6 +169,23 @@
     [refreshControl addTarget:self action:@selector(updateEventData) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
     self.refreshControl.layer.zPosition = self.tableView.backgroundView.layer.zPosition + 1;
+}
+
+- (void)viewWillLayoutSubviews
+{
+    // If the navigationBar size changes (typically due to device rotation), resize the customNavBarView with contains the rollingButtonScrollView.
+    if (self.navBarWidth != self.navigationController.navigationBar.bounds.size.width) {
+        
+        self.navBarWidth = self.navigationController.navigationBar.bounds.size.width;
+        
+        //NSLog(@"navbar width: %f", self.navigationController.navigationBar.bounds.size.width);
+        //NSLog(@"customNavBarView frame: %f, %f, %f, %f", self.customNavBarView.frame.origin.x, self.customNavBarView.frame.origin.y, self.customNavBarView.frame.size.width, self.customNavBarView.frame.size.height);
+        //NSLog(@"rollingButtonScrollView frame: %f, %f, %f, %f", self.rollingButtonScrollView.frame.origin.x, self.rollingButtonScrollView.frame.origin.y, self.rollingButtonScrollView.frame.size.width, self.rollingButtonScrollView.frame.size.height);
+        
+        CGFloat newWidth = self.navigationController.navigationBar.bounds.size.width - 32.0;
+        CGRect newFrame = CGRectMake(self.customNavBarView.frame.origin.x, self.customNavBarView.frame.origin.y, newWidth, self.customNavBarView.frame.size.height);
+        self.customNavBarView.frame = newFrame;
+    }
 }
 
 - (void)didReceiveMemoryWarning

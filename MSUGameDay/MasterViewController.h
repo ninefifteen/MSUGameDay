@@ -20,6 +20,7 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (weak, nonatomic) IBOutlet SSRollingButtonScrollView *rollingButtonScrollView;
+@property (weak, nonatomic) IBOutlet UIView *customNavBarView;
 
 @end
 

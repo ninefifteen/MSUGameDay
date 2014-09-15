@@ -213,6 +213,7 @@
                         </view>
                     </navigationItem>
                     <connections>
+                        <outlet property="customNavBarView" destination="pPx-uR-o5c" id="Lqf-pY-qsp"/>
                         <outlet property="rollingButtonScrollView" destination="gO6-iI-52l" id="0ow-lV-sAW"/>
                     </connections>
                 </tableViewController>

@@ -64,6 +64,7 @@
         
         self.updateAtStartUp = NO;
         [self performFetch];
+        [self configureRefreshControl];
     }
 }
 
@@ -173,13 +174,28 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        controller.event = event;
-        controller.managedObjectContext = self.managedObjectContext;
-        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-        controller.navigationItem.leftItemsSupplementBackButton = YES;
+        
+        if (sender == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
+            
+            UITableView *tableView = ((UITableViewController *)self.searchController.searchResultsController).tableView;
+            NSIndexPath *indexPath = [tableView indexPathForSelectedRow];
+            Event *event = [self.filteredEvents objectAtIndex:indexPath.row];
+            DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
+            controller.event = event;
+            controller.managedObjectContext = self.managedObjectContext;
+            controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+            controller.navigationItem.leftItemsSupplementBackButton = YES;
+            
+        } else {
+            
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+            DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
+            controller.event = event;
+            controller.managedObjectContext = self.managedObjectContext;
+            controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+            controller.navigationItem.leftItemsSupplementBackButton = YES;
+        }
     }
 }
 

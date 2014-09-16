@@ -163,7 +163,7 @@
         event.localEndDate = [self formattedDateFromString:[eventDictionary objectForKey:@"s:localstartdate"]];
         
         // Determine if event is home or away.
-        if ([[eventDictionary objectForKey:@"ev:location"] isEqualToString:kHomeCityState] || [[eventDictionary objectForKey:@"ev:location"] isEqualToString:kHomeCityState]) {
+        if ([[eventDictionary objectForKey:@"ev:location"] isEqualToString:kHomeCityStateAbv] || [[eventDictionary objectForKey:@"ev:location"] isEqualToString:kHomeCityStateFull]) {
             event.isHomeEvent = @"YES";
         } else {
             event.isHomeEvent = @"NO";

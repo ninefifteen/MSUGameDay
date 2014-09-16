@@ -17,7 +17,9 @@
 
 #define SPORTS_CATEGORIES @[@"Men's Track",@"Women's Track",@"Men's Cross Country",@"Women's Cross Country",@"Men's Basketball",@"Women's Basketball",@"Football",@"Baseball",@"Men's Golf",@"Women's Golf",@"Men's Soccer",@"Women's Soccer",@"Softball",@"Men's Tennis",@"Women's Tennis",@"Volleyball"]
 
-static NSString * const kHomeCityState = @"Wichita Falls, TX";
+static NSString * const kSchoolName = @"Midwestern State";
+static NSString * const kHomeCityStateAbv = @"Wichita Falls, TX";
+static NSString * const kHomeCityStateFull = @"Wichita Falls, Texas";
 
 static int const kTimeIntervalBetweenAutomaticUpdates = 86400;   // 24 hours
 

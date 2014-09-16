@@ -21,26 +21,6 @@
             </objects>
             <point key="canvasLocation" x="-38" y="-630"/>
         </scene>
-        <!--Detail-->
-        <scene sceneID="yUG-lL-AsK">
-            <objects>
-                <viewController title="Detail" id="JEX-9P-axG" customClass="DetailViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SYR-Wa-9uf"/>
-                        <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1535" y="129"/>
-        </scene>
         <!--Detail View Controller-->
         <scene sceneID="Z6p-9z-l00">
             <objects>
@@ -69,14 +49,14 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="chv-OU-V8A" id="e2p-KJ-2Qw">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wsR-Ht-lnl">
+                                        <imageView userInteractionEnabled="NO" tag="201" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NCAA_64" translatesAutoresizingMaskIntoConstraints="NO" id="wsR-Ht-lnl">
                                             <rect key="frame" x="15" y="1" width="64" height="64"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="64" id="bCU-zy-Zps"/>
                                                 <constraint firstAttribute="width" constant="64" id="ipN-NL-gkg"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home/Away" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbZ-2R-4wD">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="202" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home/Away" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbZ-2R-4wD">
                                             <rect key="frame" x="87" y="9" width="78" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="17" id="onz-2Y-ADI"/>
@@ -85,7 +65,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Mna-83-kSB">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="203" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Mna-83-kSB">
                                             <rect key="frame" x="87" y="27" width="104" height="34"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="34" id="Jqh-u7-lmK"/>
@@ -122,7 +102,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fES-gQ-gzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="120"/>
+            <point key="canvasLocation" x="748" y="129"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -285,7 +265,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1010" y="-630"/>
+            <point key="canvasLocation" x="748" y="-630"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
@@ -303,6 +283,9 @@
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NCAA_64" width="64" height="64"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>

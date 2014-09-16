@@ -87,10 +87,50 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lkH-2W-Dq2">
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeLocationCell" id="lkH-2W-Dq2">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lkH-2W-Dq2" id="Zor-hn-Igf">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="211" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FieldTitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiV-sQ-TGI">
+                                            <rect key="frame" x="15" y="4" width="577" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="mmW-qg-naw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Time/Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7P-XS-xU4">
+                                            <rect key="frame" x="15" y="19" width="577" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="SiV-sQ-TGI" firstAttribute="trailing" secondItem="E7P-XS-xU4" secondAttribute="trailing" id="ECU-RH-kqD"/>
+                                        <constraint firstItem="E7P-XS-xU4" firstAttribute="top" secondItem="SiV-sQ-TGI" secondAttribute="bottom" id="IMN-fZ-sbN"/>
+                                        <constraint firstItem="E7P-XS-xU4" firstAttribute="leading" secondItem="SiV-sQ-TGI" secondAttribute="leading" id="RTm-gL-rVU"/>
+                                        <constraint firstItem="SiV-sQ-TGI" firstAttribute="top" secondItem="Zor-hn-Igf" secondAttribute="topMargin" constant="-4" id="gyd-ct-lfI"/>
+                                        <constraint firstItem="SiV-sQ-TGI" firstAttribute="leading" secondItem="Zor-hn-Igf" secondAttribute="leadingMargin" constant="7" id="kDj-DU-cNv"/>
+                                        <constraint firstItem="SiV-sQ-TGI" firstAttribute="trailing" secondItem="Zor-hn-Igf" secondAttribute="trailingMargin" id="njS-j7-Kv2"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="E7P-XS-xU4" secondAttribute="bottom" constant="-6" id="sxC-aG-Evc"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddToCalendarCell" textLabel="caE-NU-EBF" rowHeight="44" style="IBUITableViewCellStyleDefault" id="htR-zM-Ss3">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="htR-zM-Ss3" id="vo3-oa-yc6">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Add Event To Calendar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="caE-NU-EBF">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -103,7 +143,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fES-gQ-gzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="128"/>
+            <point key="canvasLocation" x="748" y="129"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">

@@ -313,7 +313,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"showDetail" sender:tableView];
+    if (tableView == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
+        [self performSegueWithIdentifier:@"showDetail" sender:tableView];
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

@@ -30,7 +30,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" textLabel="gpn-Am-sog" rowHeight="36" style="IBUITableViewCellStyleDefault" id="EhM-uV-CT9">
+                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" textLabel="gpn-Am-sog" rowHeight="36" style="IBUITableViewCellStyleDefault" id="EhM-uV-CT9">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EhM-uV-CT9" id="Uqq-jN-a3l">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -44,7 +44,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeamCell" rowHeight="66" id="chv-OU-V8A">
+                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeamCell" rowHeight="66" id="chv-OU-V8A">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="chv-OU-V8A" id="e2p-KJ-2Qw">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -65,8 +65,8 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="203" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Mna-83-kSB">
-                                            <rect key="frame" x="87" y="27" width="104" height="34"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="203" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Mna-83-kSB">
+                                            <rect key="frame" x="87" y="27" width="505" height="34"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="34" id="Jqh-u7-lmK"/>
                                             </constraints>
@@ -79,6 +79,7 @@
                                         <constraint firstAttribute="centerY" secondItem="wsR-Ht-lnl" secondAttribute="centerY" id="0ge-Nz-ibS"/>
                                         <constraint firstItem="Mna-83-kSB" firstAttribute="top" secondItem="lbZ-2R-4wD" secondAttribute="bottom" constant="1" id="7vj-et-szf"/>
                                         <constraint firstItem="Mna-83-kSB" firstAttribute="top" secondItem="lbZ-2R-4wD" secondAttribute="bottom" constant="1" id="9jI-rp-rRJ"/>
+                                        <constraint firstItem="Mna-83-kSB" firstAttribute="trailing" secondItem="e2p-KJ-2Qw" secondAttribute="trailingMargin" id="Aiw-Ai-lZX"/>
                                         <constraint firstItem="lbZ-2R-4wD" firstAttribute="leading" secondItem="wsR-Ht-lnl" secondAttribute="trailing" constant="8" id="D8t-30-XAy"/>
                                         <constraint firstItem="Mna-83-kSB" firstAttribute="leading" secondItem="wsR-Ht-lnl" secondAttribute="trailing" constant="8" id="Hzy-C7-yfL"/>
                                         <constraint firstItem="wsR-Ht-lnl" firstAttribute="leading" secondItem="e2p-KJ-2Qw" secondAttribute="leadingMargin" constant="7" id="KLq-SZ-DhX"/>
@@ -102,7 +103,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fES-gQ-gzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="129"/>
+            <point key="canvasLocation" x="748" y="128"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">

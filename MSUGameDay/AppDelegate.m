@@ -46,6 +46,8 @@
     MasterViewController *controller = (MasterViewController *)masterNavigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
     
+    splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;
+    
     [self customizeAppearance];
     
     return YES;

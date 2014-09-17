@@ -34,7 +34,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     if (self.event) {
-        return 2;
+        return 4;
     } else {
         return 0;
     }
@@ -50,7 +50,7 @@
             break;
             
         case 1:
-            if ([self.event.category isEqualToString:@"Men's Track"] || [self.event.category isEqualToString:@"Women's Track"] || [self.event.category isEqualToString:@"Men's Cross Country"] || [self.event.category isEqualToString:@"Women's Cross Country"] || [self.event.category isEqualToString:@"Men's Golf"] || [self.event.category isEqualToString:@"Women's Golf"] || [self.event.category isEqualToString:@"NCAA"] ) {
+            if ([HOST_TYPE_CATEGORIES containsObject:self.event.category]) {
                 return 1;
             } else {
                 return 2;
@@ -81,37 +81,63 @@
         cell.textLabel.text = self.event.category;
         return cell;
         
-    } else /*if (indexPath.section == 1)*/ {
+    } else if (indexPath.section == 1) {
 
         static NSString *CellIdentifier = @"TeamCell";
         UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
-        if (indexPath.row == 0) {
+        if ([HOST_TYPE_CATEGORIES containsObject:self.event.category]) {
             
-            UILabel *homeLabel = (UILabel *)[cell viewWithTag:202];
-            homeLabel.text = @"Home";
+            UILabel *hostLabel = (UILabel *)[cell viewWithTag:202];
+            hostLabel.text = @"Host";
             
-            UILabel *teamNameLabel = (UILabel *)[cell viewWithTag:203];
-            if ([self.event.isHomeEvent isEqualToString:@"YES"]) {
-                teamNameLabel.text = kSchoolName;
-            } else {
-                teamNameLabel.text = [self configureOpponentLabelTextFromTitle:self.event.title andCategory:self.event.category];
-            }
+            UILabel *hostTeamNameLabel = (UILabel *)[cell viewWithTag:203];
+            hostTeamNameLabel.text = [self configureOpponentLabelTextFromTitle:self.event.title andCategory:self.event.category];
             
         } else {
             
-            UILabel *awayLabel = (UILabel *)[cell viewWithTag:202];
-            awayLabel.text = @"Away";
-            
-            UILabel *teamNameLabel = (UILabel *)[cell viewWithTag:203];
-            if ([self.event.isHomeEvent isEqualToString:@"YES"]) {
-                teamNameLabel.text = [self configureOpponentLabelTextFromTitle:self.event.title andCategory:self.event.category];
+            if (indexPath.row == 0) {
+                
+                UILabel *homeLabel = (UILabel *)[cell viewWithTag:202];
+                homeLabel.text = @"Home";
+                
+                UILabel *teamNameLabel = (UILabel *)[cell viewWithTag:203];
+                if ([self.event.isHomeEvent isEqualToString:@"YES"]) {
+                    teamNameLabel.text = kSchoolName;
+                } else {
+                    teamNameLabel.text = [self configureOpponentLabelTextFromTitle:self.event.title andCategory:self.event.category];
+                }
+                
             } else {
-                teamNameLabel.text = kSchoolName;
+                
+                UILabel *awayLabel = (UILabel *)[cell viewWithTag:202];
+                awayLabel.text = @"Away";
+                
+                UILabel *teamNameLabel = (UILabel *)[cell viewWithTag:203];
+                if ([self.event.isHomeEvent isEqualToString:@"YES"]) {
+                    teamNameLabel.text = [self configureOpponentLabelTextFromTitle:self.event.title andCategory:self.event.category];
+                } else {
+                    teamNameLabel.text = kSchoolName;
+                }
             }
         }
         
         return cell;
+        
+    } else if (indexPath.section == 2) {
+        
+        static NSString *CellIdentifier = @"TimeLocationCell";
+        UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        return cell;
+        
+    } else if (indexPath.section == 3) {
+        
+        static NSString *CellIdentifier = @"AddToCalendarCell";
+        UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        return cell;
+        
+    } else {
+        return nil;
     }
 }
 

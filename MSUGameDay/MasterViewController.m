@@ -13,7 +13,7 @@
 #import "Constants.h"
 #import "SSRollingButtonScrollView.h"
 
-@interface MasterViewController () <UISearchResultsUpdating, SSRollingButtonScrollViewDelegate>
+@interface MasterViewController () <UISearchResultsUpdating, SSRollingButtonScrollViewDelegate, UISplitViewControllerDelegate>
 
     @property (nonatomic) BOOL isLoadingData;
     @property (nonatomic) BOOL updateAtStartUp;

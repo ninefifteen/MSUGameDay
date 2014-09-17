@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenLogo_360pt@1x" translatesAutoresizingMaskIntoConstraints="NO" id="zdx-wN-dVJ">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenLogo_360pt" translatesAutoresizingMaskIntoConstraints="NO" id="zdx-wN-dVJ">
                     <rect key="frame" x="120" y="120" width="360" height="360"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="zdx-wN-dVJ" secondAttribute="height" multiplier="1:1" id="DJu-OK-azJ"/>
@@ -31,6 +31,6 @@
         </view>
     </objects>
     <resources>
-        <image name="LaunchScreenLogo_360pt@1x" width="360" height="360"/>
+        <image name="LaunchScreenLogo_360pt" width="360" height="360"/>
     </resources>
 </document>

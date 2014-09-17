@@ -1,1340 +1,597 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>0E7E9A17058145368CF1E602</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>45B114B519C358D40044CAED</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>45B1150619C39F890044CAED</string>
-				<string>45B1150419C39F7B0044CAED</string>
-				<string>45B1150219C39F6F0044CAED</string>
-				<string>45B1150019C39F660044CAED</string>
-				<string>45B114C019C358D40044CAED</string>
-				<string>45B114E019C358D40044CAED</string>
-				<string>45B114BF19C358D40044CAED</string>
-				<string>F50B0FE1A20A4E5997E9AB12</string>
-				<string>4EF33203DF054741889E6005</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114B619C358D40044CAED</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0600</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Shawn Seals</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>45B114BD19C358D40044CAED</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>6.0</string>
-					</dict>
-					<key>45B114DC19C358D40044CAED</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>6.0</string>
-						<key>TestTargetID</key>
-						<string>45B114BD19C358D40044CAED</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>45B114B919C358D40044CAED</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>45B114B519C358D40044CAED</string>
-			<key>productRefGroup</key>
-			<string>45B114BF19C358D40044CAED</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>45B114BD19C358D40044CAED</string>
-				<string>45B114DC19C358D40044CAED</string>
-			</array>
-		</dict>
-		<key>45B114B919C358D40044CAED</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>45B114E519C358D40044CAED</string>
-				<string>45B114E619C358D40044CAED</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>45B114BA19C358D40044CAED</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>45B114F619C377EE0044CAED</string>
-				<string>45B114D019C358D40044CAED</string>
-				<string>45B114FF19C39F1C0044CAED</string>
-				<string>45B1150B19C4B3CE0044CAED</string>
-				<string>45B114CD19C358D40044CAED</string>
-				<string>45B114FC19C38A660044CAED</string>
-				<string>45B114C719C358D40044CAED</string>
-				<string>45B114C419C358D40044CAED</string>
-				<string>45B114F919C37BC80044CAED</string>
-				<string>45B114CA19C358D40044CAED</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>45B114BB19C358D40044CAED</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>45B1150719C39F890044CAED</string>
-				<string>45B1150519C39F7B0044CAED</string>
-				<string>45B1150319C39F6F0044CAED</string>
-				<string>45B1150119C39F660044CAED</string>
-				<string>8703782704F5417B8B55EC43</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>45B114BC19C358D40044CAED</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>45B114D319C358D40044CAED</string>
-				<string>45B114D819C358D40044CAED</string>
-				<string>45B114D519C358D40044CAED</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>45B114BD19C358D40044CAED</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>45B114E719C358D40044CAED</string>
-			<key>buildPhases</key>
-			<array>
-				<string>0E7E9A17058145368CF1E602</string>
-				<string>45B114BA19C358D40044CAED</string>
-				<string>45B114BB19C358D40044CAED</string>
-				<string>45B114BC19C358D40044CAED</string>
-				<string>F53102F76BEB4DB1898C7CA2</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>MSUGameDay</string>
-			<key>productName</key>
-			<string>MSUGameDay</string>
-			<key>productReference</key>
-			<string>45B114BE19C358D40044CAED</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>45B114BE19C358D40044CAED</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>MSUGameDay.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>45B114BF19C358D40044CAED</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>45B114BE19C358D40044CAED</string>
-				<string>45B114DD19C358D40044CAED</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114C019C358D40044CAED</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>45B114ED19C36FC00044CAED</string>
-				<string>45B114F119C36FF10044CAED</string>
-				<string>45B114F019C36FE70044CAED</string>
-				<string>45B114EE19C36FCB0044CAED</string>
-				<string>45B114F219C3708B0044CAED</string>
-				<string>45B114D419C358D40044CAED</string>
-				<string>45B114D619C358D40044CAED</string>
-				<string>45B114C819C358D40044CAED</string>
-				<string>45B114C119C358D40044CAED</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>MSUGameDay</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114C119C358D40044CAED</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>45B114C219C358D40044CAED</string>
-				<string>45B114C319C358D40044CAED</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114C219C358D40044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114C319C358D40044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114C419C358D40044CAED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>45B114C319C358D40044CAED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>45B114C519C358D40044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>AppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114C619C358D40044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>AppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114C719C358D40044CAED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>45B114C619C358D40044CAED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>45B114C819C358D40044CAED</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>45B114C919C358D40044CAED</string>
-			</array>
-			<key>currentVersion</key>
-			<string>45B114C919C358D40044CAED</string>
-			<key>isa</key>
-			<string>XCVersionGroup</string>
-			<key>path</key>
-			<string>MSUGameDay.xcdatamodeld</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-			<key>versionGroupType</key>
-			<string>wrapper.xcdatamodel</string>
-		</dict>
-		<key>45B114C919C358D40044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.xcdatamodel</string>
-			<key>path</key>
-			<string>MSUGameDay.xcdatamodel</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114CA19C358D40044CAED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>45B114C819C358D40044CAED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>45B114CB19C358D40044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MasterViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114CC19C358D40044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MasterViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114CD19C358D40044CAED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>45B114CC19C358D40044CAED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>45B114CE19C358D40044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>DetailViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114CF19C358D40044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>DetailViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114D019C358D40044CAED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>45B114CF19C358D40044CAED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>45B114D119C358D40044CAED</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>45B114D219C358D40044CAED</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114D219C358D40044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114D319C358D40044CAED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>45B114D119C358D40044CAED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>45B114D419C358D40044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Images.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114D519C358D40044CAED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>45B114D419C358D40044CAED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>45B114D619C358D40044CAED</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>45B114D719C358D40044CAED</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114D719C358D40044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114D819C358D40044CAED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>45B114D619C358D40044CAED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>45B114D919C358D40044CAED</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>45B114E419C358D40044CAED</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>45B114DA19C358D40044CAED</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>45B114DB19C358D40044CAED</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>45B114DC19C358D40044CAED</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>45B114EA19C358D40044CAED</string>
-			<key>buildPhases</key>
-			<array>
-				<string>45B114D919C358D40044CAED</string>
-				<string>45B114DA19C358D40044CAED</string>
-				<string>45B114DB19C358D40044CAED</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>45B114DF19C358D40044CAED</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>MSUGameDayTests</string>
-			<key>productName</key>
-			<string>MSUGameDayTests</string>
-			<key>productReference</key>
-			<string>45B114DD19C358D40044CAED</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>45B114DD19C358D40044CAED</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>MSUGameDayTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>45B114DE19C358D40044CAED</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>45B114B619C358D40044CAED</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>45B114BD19C358D40044CAED</string>
-			<key>remoteInfo</key>
-			<string>MSUGameDay</string>
-		</dict>
-		<key>45B114DF19C358D40044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>45B114BD19C358D40044CAED</string>
-			<key>targetProxy</key>
-			<string>45B114DE19C358D40044CAED</string>
-		</dict>
-		<key>45B114E019C358D40044CAED</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>45B114E319C358D40044CAED</string>
-				<string>45B114E119C358D40044CAED</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>MSUGameDayTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114E119C358D40044CAED</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>45B114E219C358D40044CAED</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114E219C358D40044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114E319C358D40044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MSUGameDayTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114E419C358D40044CAED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>45B114E319C358D40044CAED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>45B114E519C358D40044CAED</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>45B114E619C358D40044CAED</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>45B114E719C358D40044CAED</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>45B114E819C358D40044CAED</string>
-				<string>45B114E919C358D40044CAED</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>45B114E819C358D40044CAED</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F50B0FE1A20A4E5997E9AB12</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>MSUGameDay/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>45B114E919C358D40044CAED</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F50B0FE1A20A4E5997E9AB12</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>MSUGameDay/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>45B114EA19C358D40044CAED</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>45B114EB19C358D40044CAED</string>
-				<string>45B114EC19C358D40044CAED</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>45B114EB19C358D40044CAED</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>MSUGameDayTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/MSUGameDay.app/MSUGameDay</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>45B114EC19C358D40044CAED</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>MSUGameDayTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/MSUGameDay.app/MSUGameDay</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>45B114ED19C36FC00044CAED</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>45B114F419C377EE0044CAED</string>
-				<string>45B114F519C377EE0044CAED</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Model</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114EE19C36FCB0044CAED</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>45B114F719C37BC80044CAED</string>
-				<string>45B114F819C37BC80044CAED</string>
-				<string>45B114FD19C39F1B0044CAED</string>
-				<string>45B114FE19C39F1C0044CAED</string>
-				<string>45B114FA19C38A660044CAED</string>
-				<string>45B114FB19C38A660044CAED</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>API</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114F019C36FE70044CAED</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>45B114C519C358D40044CAED</string>
-				<string>45B114C619C358D40044CAED</string>
-				<string>45B114CB19C358D40044CAED</string>
-				<string>45B114CC19C358D40044CAED</string>
-				<string>45B114CE19C358D40044CAED</string>
-				<string>45B114CF19C358D40044CAED</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Controller</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114F119C36FF10044CAED</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>45B114D119C358D40044CAED</string>
-				<string>45B1150919C4B3CE0044CAED</string>
-				<string>45B1150A19C4B3CE0044CAED</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>View</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114F219C3708B0044CAED</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>45B114F319C3716E0044CAED</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Constants</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114F319C3716E0044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Constants.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114F419C377EE0044CAED</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Event.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114F519C377EE0044CAED</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Event.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114F619C377EE0044CAED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>45B114F519C377EE0044CAED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>45B114F719C37BC80044CAED</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EventManager.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114F819C37BC80044CAED</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>EventManager.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114F919C37BC80044CAED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>45B114F819C37BC80044CAED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>45B114FA19C38A660044CAED</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>RssFeedParser.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114FB19C38A660044CAED</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>RssFeedParser.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114FC19C38A660044CAED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>45B114FB19C38A660044CAED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>45B114FD19C39F1B0044CAED</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>CalendarManager.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114FE19C39F1C0044CAED</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>CalendarManager.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B114FF19C39F1C0044CAED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>45B114FE19C39F1C0044CAED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>45B1150019C39F660044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>EventKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/EventKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>45B1150119C39F660044CAED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>45B1150019C39F660044CAED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>45B1150219C39F6F0044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreGraphics.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreGraphics.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>45B1150319C39F6F0044CAED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>45B1150219C39F6F0044CAED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>45B1150419C39F7B0044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>45B1150519C39F7B0044CAED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>45B1150419C39F7B0044CAED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>45B1150619C39F890044CAED</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>45B1150719C39F890044CAED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>45B1150619C39F890044CAED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>45B1150919C4B3CE0044CAED</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SSRollingButtonScrollView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B1150A19C4B3CE0044CAED</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SSRollingButtonScrollView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45B1150B19C4B3CE0044CAED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>45B1150A19C4B3CE0044CAED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>4EF33203DF054741889E6005</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5006C8A0E34B4435B891B58F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5006C8A0E34B4435B891B58F</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-MSUGameDay.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>8703782704F5417B8B55EC43</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5006C8A0E34B4435B891B58F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F50B0FE1A20A4E5997E9AB12</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-MSUGameDay.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods-MSUGameDay.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F53102F76BEB4DB1898C7CA2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-MSUGameDay-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>45B114B619C358D40044CAED</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		45B114C419C358D40044CAED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B114C319C358D40044CAED /* main.m */; };
+		45B114C719C358D40044CAED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B114C619C358D40044CAED /* AppDelegate.m */; };
+		45B114CA19C358D40044CAED /* MSUGameDay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45B114C819C358D40044CAED /* MSUGameDay.xcdatamodeld */; };
+		45B114CD19C358D40044CAED /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B114CC19C358D40044CAED /* MasterViewController.m */; };
+		45B114D019C358D40044CAED /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B114CF19C358D40044CAED /* DetailViewController.m */; };
+		45B114D319C358D40044CAED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B114D119C358D40044CAED /* Main.storyboard */; };
+		45B114D519C358D40044CAED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B114D419C358D40044CAED /* Images.xcassets */; };
+		45B114D819C358D40044CAED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45B114D619C358D40044CAED /* LaunchScreen.xib */; };
+		45B114E419C358D40044CAED /* MSUGameDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B114E319C358D40044CAED /* MSUGameDayTests.m */; };
+		45B114F619C377EE0044CAED /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B114F519C377EE0044CAED /* Event.m */; };
+		45B114F919C37BC80044CAED /* EventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B114F819C37BC80044CAED /* EventManager.m */; };
+		45B114FC19C38A660044CAED /* RssFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B114FB19C38A660044CAED /* RssFeedParser.m */; };
+		45B114FF19C39F1C0044CAED /* CalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B114FE19C39F1C0044CAED /* CalendarManager.m */; };
+		45B1150119C39F660044CAED /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B1150019C39F660044CAED /* EventKit.framework */; };
+		45B1150319C39F6F0044CAED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B1150219C39F6F0044CAED /* CoreGraphics.framework */; };
+		45B1150519C39F7B0044CAED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B1150419C39F7B0044CAED /* UIKit.framework */; };
+		45B1150719C39F890044CAED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B1150619C39F890044CAED /* Foundation.framework */; };
+		45B1150B19C4B3CE0044CAED /* SSRollingButtonScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B1150A19C4B3CE0044CAED /* SSRollingButtonScrollView.m */; };
+		45B1156319CA44700044CAED /* TableBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45B1156219CA44700044CAED /* TableBackgroundView.xib */; };
+		8703782704F5417B8B55EC43 /* libPods-MSUGameDay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5006C8A0E34B4435B891B58F /* libPods-MSUGameDay.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		45B114DE19C358D40044CAED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45B114B619C358D40044CAED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45B114BD19C358D40044CAED;
+			remoteInfo = MSUGameDay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		45B114BE19C358D40044CAED /* MSUGameDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSUGameDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45B114C219C358D40044CAED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45B114C319C358D40044CAED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		45B114C519C358D40044CAED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		45B114C619C358D40044CAED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		45B114C919C358D40044CAED /* MSUGameDay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MSUGameDay.xcdatamodel; sourceTree = "<group>"; };
+		45B114CB19C358D40044CAED /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		45B114CC19C358D40044CAED /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		45B114CE19C358D40044CAED /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		45B114CF19C358D40044CAED /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		45B114D219C358D40044CAED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		45B114D419C358D40044CAED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		45B114D719C358D40044CAED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		45B114DD19C358D40044CAED /* MSUGameDayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MSUGameDayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45B114E219C358D40044CAED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45B114E319C358D40044CAED /* MSUGameDayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSUGameDayTests.m; sourceTree = "<group>"; };
+		45B114F319C3716E0044CAED /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		45B114F419C377EE0044CAED /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		45B114F519C377EE0044CAED /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		45B114F719C37BC80044CAED /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
+		45B114F819C37BC80044CAED /* EventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventManager.m; sourceTree = "<group>"; };
+		45B114FA19C38A660044CAED /* RssFeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RssFeedParser.h; sourceTree = "<group>"; };
+		45B114FB19C38A660044CAED /* RssFeedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RssFeedParser.m; sourceTree = "<group>"; };
+		45B114FD19C39F1B0044CAED /* CalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarManager.h; sourceTree = "<group>"; };
+		45B114FE19C39F1C0044CAED /* CalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarManager.m; sourceTree = "<group>"; };
+		45B1150019C39F660044CAED /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		45B1150219C39F6F0044CAED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		45B1150419C39F7B0044CAED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		45B1150619C39F890044CAED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		45B1150919C4B3CE0044CAED /* SSRollingButtonScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSRollingButtonScrollView.h; sourceTree = "<group>"; };
+		45B1150A19C4B3CE0044CAED /* SSRollingButtonScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSRollingButtonScrollView.m; sourceTree = "<group>"; };
+		45B1156219CA44700044CAED /* TableBackgroundView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableBackgroundView.xib; sourceTree = "<group>"; };
+		5006C8A0E34B4435B891B58F /* libPods-MSUGameDay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MSUGameDay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F50B0FE1A20A4E5997E9AB12 /* Pods-MSUGameDay.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSUGameDay.xcconfig"; path = "Pods/Pods-MSUGameDay.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45B114BB19C358D40044CAED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B1150719C39F890044CAED /* Foundation.framework in Frameworks */,
+				45B1150519C39F7B0044CAED /* UIKit.framework in Frameworks */,
+				45B1150319C39F6F0044CAED /* CoreGraphics.framework in Frameworks */,
+				45B1150119C39F660044CAED /* EventKit.framework in Frameworks */,
+				8703782704F5417B8B55EC43 /* libPods-MSUGameDay.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B114DA19C358D40044CAED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45B114B519C358D40044CAED = {
+			isa = PBXGroup;
+			children = (
+				45B1150619C39F890044CAED /* Foundation.framework */,
+				45B1150419C39F7B0044CAED /* UIKit.framework */,
+				45B1150219C39F6F0044CAED /* CoreGraphics.framework */,
+				45B1150019C39F660044CAED /* EventKit.framework */,
+				45B114C019C358D40044CAED /* MSUGameDay */,
+				45B114E019C358D40044CAED /* MSUGameDayTests */,
+				45B114BF19C358D40044CAED /* Products */,
+				F50B0FE1A20A4E5997E9AB12 /* Pods-MSUGameDay.xcconfig */,
+				4EF33203DF054741889E6005 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		45B114BF19C358D40044CAED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45B114BE19C358D40044CAED /* MSUGameDay.app */,
+				45B114DD19C358D40044CAED /* MSUGameDayTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45B114C019C358D40044CAED /* MSUGameDay */ = {
+			isa = PBXGroup;
+			children = (
+				45B114ED19C36FC00044CAED /* Model */,
+				45B114F119C36FF10044CAED /* View */,
+				45B114F019C36FE70044CAED /* Controller */,
+				45B114EE19C36FCB0044CAED /* API */,
+				45B114F219C3708B0044CAED /* Constants */,
+				45B114D419C358D40044CAED /* Images.xcassets */,
+				45B114D619C358D40044CAED /* LaunchScreen.xib */,
+				45B114C819C358D40044CAED /* MSUGameDay.xcdatamodeld */,
+				45B114C119C358D40044CAED /* Supporting Files */,
+			);
+			path = MSUGameDay;
+			sourceTree = "<group>";
+		};
+		45B114C119C358D40044CAED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				45B114C219C358D40044CAED /* Info.plist */,
+				45B114C319C358D40044CAED /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45B114E019C358D40044CAED /* MSUGameDayTests */ = {
+			isa = PBXGroup;
+			children = (
+				45B114E319C358D40044CAED /* MSUGameDayTests.m */,
+				45B114E119C358D40044CAED /* Supporting Files */,
+			);
+			path = MSUGameDayTests;
+			sourceTree = "<group>";
+		};
+		45B114E119C358D40044CAED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				45B114E219C358D40044CAED /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45B114ED19C36FC00044CAED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				45B114F419C377EE0044CAED /* Event.h */,
+				45B114F519C377EE0044CAED /* Event.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		45B114EE19C36FCB0044CAED /* API */ = {
+			isa = PBXGroup;
+			children = (
+				45B114F719C37BC80044CAED /* EventManager.h */,
+				45B114F819C37BC80044CAED /* EventManager.m */,
+				45B114FD19C39F1B0044CAED /* CalendarManager.h */,
+				45B114FE19C39F1C0044CAED /* CalendarManager.m */,
+				45B114FA19C38A660044CAED /* RssFeedParser.h */,
+				45B114FB19C38A660044CAED /* RssFeedParser.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		45B114F019C36FE70044CAED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				45B114C519C358D40044CAED /* AppDelegate.h */,
+				45B114C619C358D40044CAED /* AppDelegate.m */,
+				45B114CB19C358D40044CAED /* MasterViewController.h */,
+				45B114CC19C358D40044CAED /* MasterViewController.m */,
+				45B114CE19C358D40044CAED /* DetailViewController.h */,
+				45B114CF19C358D40044CAED /* DetailViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		45B114F119C36FF10044CAED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				45B114D119C358D40044CAED /* Main.storyboard */,
+				45B1150919C4B3CE0044CAED /* SSRollingButtonScrollView.h */,
+				45B1150A19C4B3CE0044CAED /* SSRollingButtonScrollView.m */,
+				45B1156219CA44700044CAED /* TableBackgroundView.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		45B114F219C3708B0044CAED /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				45B114F319C3716E0044CAED /* Constants.h */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		4EF33203DF054741889E6005 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5006C8A0E34B4435B891B58F /* libPods-MSUGameDay.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		45B114BD19C358D40044CAED /* MSUGameDay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45B114E719C358D40044CAED /* Build configuration list for PBXNativeTarget "MSUGameDay" */;
+			buildPhases = (
+				0E7E9A17058145368CF1E602 /* Check Pods Manifest.lock */,
+				45B114BA19C358D40044CAED /* Sources */,
+				45B114BB19C358D40044CAED /* Frameworks */,
+				45B114BC19C358D40044CAED /* Resources */,
+				F53102F76BEB4DB1898C7CA2 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MSUGameDay;
+			productName = MSUGameDay;
+			productReference = 45B114BE19C358D40044CAED /* MSUGameDay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		45B114DC19C358D40044CAED /* MSUGameDayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45B114EA19C358D40044CAED /* Build configuration list for PBXNativeTarget "MSUGameDayTests" */;
+			buildPhases = (
+				45B114D919C358D40044CAED /* Sources */,
+				45B114DA19C358D40044CAED /* Frameworks */,
+				45B114DB19C358D40044CAED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45B114DF19C358D40044CAED /* PBXTargetDependency */,
+			);
+			name = MSUGameDayTests;
+			productName = MSUGameDayTests;
+			productReference = 45B114DD19C358D40044CAED /* MSUGameDayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		45B114B619C358D40044CAED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Shawn Seals";
+				TargetAttributes = {
+					45B114BD19C358D40044CAED = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					45B114DC19C358D40044CAED = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 45B114BD19C358D40044CAED;
+					};
+				};
+			};
+			buildConfigurationList = 45B114B919C358D40044CAED /* Build configuration list for PBXProject "MSUGameDay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 45B114B519C358D40044CAED;
+			productRefGroup = 45B114BF19C358D40044CAED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				45B114BD19C358D40044CAED /* MSUGameDay */,
+				45B114DC19C358D40044CAED /* MSUGameDayTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		45B114BC19C358D40044CAED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B114D319C358D40044CAED /* Main.storyboard in Resources */,
+				45B114D819C358D40044CAED /* LaunchScreen.xib in Resources */,
+				45B114D519C358D40044CAED /* Images.xcassets in Resources */,
+				45B1156319CA44700044CAED /* TableBackgroundView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B114DB19C358D40044CAED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E7E9A17058145368CF1E602 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F53102F76BEB4DB1898C7CA2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-MSUGameDay-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		45B114BA19C358D40044CAED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B114F619C377EE0044CAED /* Event.m in Sources */,
+				45B114D019C358D40044CAED /* DetailViewController.m in Sources */,
+				45B114FF19C39F1C0044CAED /* CalendarManager.m in Sources */,
+				45B1150B19C4B3CE0044CAED /* SSRollingButtonScrollView.m in Sources */,
+				45B114CD19C358D40044CAED /* MasterViewController.m in Sources */,
+				45B114FC19C38A660044CAED /* RssFeedParser.m in Sources */,
+				45B114C719C358D40044CAED /* AppDelegate.m in Sources */,
+				45B114C419C358D40044CAED /* main.m in Sources */,
+				45B114F919C37BC80044CAED /* EventManager.m in Sources */,
+				45B114CA19C358D40044CAED /* MSUGameDay.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B114D919C358D40044CAED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B114E419C358D40044CAED /* MSUGameDayTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		45B114DF19C358D40044CAED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45B114BD19C358D40044CAED /* MSUGameDay */;
+			targetProxy = 45B114DE19C358D40044CAED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		45B114D119C358D40044CAED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45B114D219C358D40044CAED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		45B114D619C358D40044CAED /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45B114D719C358D40044CAED /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		45B114E519C358D40044CAED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		45B114E619C358D40044CAED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		45B114E819C358D40044CAED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F50B0FE1A20A4E5997E9AB12 /* Pods-MSUGameDay.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MSUGameDay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		45B114E919C358D40044CAED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F50B0FE1A20A4E5997E9AB12 /* Pods-MSUGameDay.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MSUGameDay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		45B114EB19C358D40044CAED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MSUGameDayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSUGameDay.app/MSUGameDay";
+			};
+			name = Debug;
+		};
+		45B114EC19C358D40044CAED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MSUGameDayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSUGameDay.app/MSUGameDay";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45B114B919C358D40044CAED /* Build configuration list for PBXProject "MSUGameDay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B114E519C358D40044CAED /* Debug */,
+				45B114E619C358D40044CAED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45B114E719C358D40044CAED /* Build configuration list for PBXNativeTarget "MSUGameDay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B114E819C358D40044CAED /* Debug */,
+				45B114E919C358D40044CAED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45B114EA19C358D40044CAED /* Build configuration list for PBXNativeTarget "MSUGameDayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B114EB19C358D40044CAED /* Debug */,
+				45B114EC19C358D40044CAED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		45B114C819C358D40044CAED /* MSUGameDay.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				45B114C919C358D40044CAED /* MSUGameDay.xcdatamodel */,
+			);
+			currentVersion = 45B114C919C358D40044CAED /* MSUGameDay.xcdatamodel */;
+			path = MSUGameDay.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 45B114B619C358D40044CAED /* Project object */;
+}

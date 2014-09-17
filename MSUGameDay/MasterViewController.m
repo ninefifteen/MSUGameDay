@@ -15,12 +15,15 @@
 
 @interface MasterViewController () <UISearchResultsUpdating, SSRollingButtonScrollViewDelegate, UISplitViewControllerDelegate>
 
-    @property (nonatomic) BOOL isLoadingData;
-    @property (nonatomic) BOOL updateAtStartUp;
-    @property (nonatomic) CGFloat navBarWidth;
+@property (nonatomic) BOOL isLoadingData;
+@property (nonatomic) BOOL updateAtStartUp;
+@property (nonatomic) CGFloat navBarWidth;
 
-    @property (nonatomic, strong) UISearchController *searchController;
-    @property (nonatomic, strong) NSMutableArray *filteredEvents;
+@property (nonatomic, strong) UISearchController *searchController;
+@property (nonatomic, strong) NSMutableArray *filteredEvents;
+
+@property (nonatomic, strong) UIView *tableBackgroundView;
+@property (nonatomic, strong) UIView *searchTableBackgroundView;
 
 @end
 
@@ -44,6 +47,7 @@
     self.navBarWidth = 0.0;
     [self configureCustomNavBarView];
     [self configureSearchController];
+    [self configureBackgrounds];
     
     NSTimeInterval timeSinceLastUpdate = 0;
     
@@ -97,6 +101,18 @@
     self.tableView.tableHeaderView = self.searchController.searchBar;
     
     self.definesPresentationContext = YES;
+}
+
+- (void)configureBackgrounds
+{
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableBackgroundView = [[[NSBundle mainBundle] loadNibNamed:@"TableBackgroundView" owner:self options:nil] objectAtIndex:0];
+    self.tableView.backgroundView = self.tableBackgroundView;
+    
+    UITableView *searchTable = ((UITableViewController *)self.searchController.searchResultsController).tableView;
+    searchTable.backgroundColor = [UIColor clearColor];
+    self.searchTableBackgroundView = [[[NSBundle mainBundle] loadNibNamed:@"TableBackgroundView" owner:self options:nil] objectAtIndex:0];
+    searchTable.backgroundView = self.searchTableBackgroundView;
 }
 
 - (void)updateEventData
@@ -160,6 +176,7 @@
         CGFloat newWidth = self.navigationController.navigationBar.bounds.size.width - 32.0;
         CGRect newFrame = CGRectMake(self.customNavBarView.frame.origin.x, self.customNavBarView.frame.origin.y, newWidth, self.customNavBarView.frame.size.height);
         self.customNavBarView.frame = newFrame;
+        
     }
 }
 
@@ -177,6 +194,7 @@
         
         if (sender == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
             
+            NSLog(@"Here!");
             UITableView *tableView = ((UITableViewController *)self.searchController.searchResultsController).tableView;
             NSIndexPath *indexPath = [tableView indexPathForSelectedRow];
             Event *event = [self.filteredEvents objectAtIndex:indexPath.row];
@@ -188,6 +206,7 @@
             
         } else {
             
+            NSLog(@"And Here!");
             NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
             Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
             DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
@@ -245,7 +264,7 @@
             UILabel *loadingLabel = (UILabel *)[cell viewWithTag:101];
             loadingLabel.text = @"Loading...";
         }
-        
+        cell.backgroundColor = [UIColor clearColor];
         return cell;
         
     } else if (tableView == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
@@ -265,6 +284,7 @@
             if (indexPath.row == 0 && !self.isLoadingData) {
                 cell.textLabel.text = @"No Results";
             }
+            cell.backgroundColor = [UIColor clearColor];
             return cell;
         }
         
@@ -285,6 +305,7 @@
             if (indexPath.row == 0 && !self.isLoadingData) {
                 cell.textLabel.text = @"No Results";
             }
+            cell.backgroundColor = [UIColor clearColor];
             return cell;
         }
     }
@@ -308,6 +329,7 @@
     }
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ in %@", dateString, event.location];
     
+    cell.backgroundColor = [UIColor clearColor];
     return cell;
 }
 

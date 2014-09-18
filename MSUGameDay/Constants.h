@@ -27,5 +27,12 @@ static NSString * const kHomeCityStateFull = @"Wichita Falls, Texas";
 
 static int const kTimeIntervalBetweenAutomaticUpdates = 86400;   // 24 hours
 
+extern NSString * const ManagedObjectContextSaveDidFailNotification;
+
+#define FATAL_CORE_DATA_ERROR(__error__)\
+    NSLog(@"*** Fatal error in %s:%d\n%@\n%@",\
+    __FILE__, __LINE__, error, [error userInfo]);\
+    [[NSNotificationCenter defaultCenter] postNotificationName:\
+    ManagedObjectContextSaveDidFailNotification object:error];
 
 #endif

@@ -12,6 +12,8 @@
 #import "EventManager.h"
 #import "Constants.h"
 
+NSString * const ManagedObjectContextSaveDidFailNotification = @"ManagedObjectContextSaveDidFailNotification";
+
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
 @end
@@ -35,6 +37,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fatalCoreDataError:) name:ManagedObjectContextSaveDidFailNotification object:nil];
+    
     [EventManager sharedInstance].managedObjectContext = self.managedObjectContext;
     
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
@@ -63,6 +67,40 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    // Saves changes in the application's managed object context before the application terminates.
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    [request setEntity:entity];
+    
+    // Set fetch predicate to fetch events that occured over four weeks agd.
+    NSDate *fourWeeksAgo = [[NSDate date] dateByAddingTimeInterval:-86400*28];   // 86400 sec = 1 day
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(startDate <= %@)", fourWeeksAgo];
+    [request setPredicate:predicate];
+    
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:YES];
+    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    NSError *error;
+    NSMutableArray *mutableFetchResults = [[self.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    
+    if (mutableFetchResults == nil) {
+        // Handle the error.
+        NSLog(@"%@", @"mutableFetchResults are nil in AppDelegate.m - applicationWillTerminate.");
+    }
+    
+    NSMutableArray *eventsArrayForCleanUp = [[NSMutableArray alloc] initWithCapacity:30];
+    eventsArrayForCleanUp = mutableFetchResults;
+    
+    // Delete the fetched events.
+    for (NSManagedObject *eventForDelete in eventsArrayForCleanUp) {
+        [self.managedObjectContext deleteObject:eventForDelete];
+    }
+    
+    if (![self.managedObjectContext save:&error]) {
+        FATAL_CORE_DATA_ERROR(error);
+        return;
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -79,7 +117,6 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
-    [self saveContext];
 }
 
 #pragma mark - Split view
@@ -137,9 +174,7 @@
         dict[NSLocalizedFailureReasonErrorKey] = failureReason;
         dict[NSUnderlyingErrorKey] = error;
         error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
-        // Replace this with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        NSLog(@"Error adding persistent store %@, %@", error, [error userInfo]);
         abort();
     }
     
@@ -163,20 +198,23 @@
     return _managedObjectContext;
 }
 
-#pragma mark - Core Data Saving support
-
-- (void)saveContext
+- (void)fatalCoreDataError:(NSNotification *)notification
 {
-    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
-    if (managedObjectContext != nil) {
-        NSError *error = nil;
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-    }
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:NSLocalizedString(@"Internal Error", nil)
+                              message:NSLocalizedString(@"There was a fatal error in the app and it cannot continue.\n\nPress OK to terminate the app. Sorry for the inconvenience.", nil)
+                              delegate:self
+                              cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                              otherButtonTitles:nil];
+    
+    [alertView show];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    abort();
 }
 
 @end

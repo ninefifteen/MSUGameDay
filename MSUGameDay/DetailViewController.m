@@ -42,10 +42,10 @@
                     self.event.isInCalendar = @"YES";
                     [self.tableView reloadData];
                     
-                    NSError *saveError;
-                    [self.managedObjectContext save:&saveError];
-                    if (saveError) {
-                        NSLog(@"Core Data Error in addEventToCalendar: %@", [saveError localizedDescription]);
+                    NSError *error;
+                    if (![self.managedObjectContext save:&error]) {
+                        FATAL_CORE_DATA_ERROR(error);
+                        return;
                     }
                 }
                 
@@ -65,10 +65,10 @@
                     self.event.isInCalendar = @"NO";
                     [self.tableView reloadData];
                     
-                    NSError *saveError;
-                    [self.managedObjectContext save:&saveError];
-                    if (saveError) {
-                        NSLog(@"Core Data Error in deleteEventFromCalendar: %@", [saveError localizedDescription]);
+                    NSError *error;
+                    if (![self.managedObjectContext save:&error]) {
+                        FATAL_CORE_DATA_ERROR(error);
+                        return;
                     }
                 }
                 

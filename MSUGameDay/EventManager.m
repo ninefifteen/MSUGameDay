@@ -235,10 +235,10 @@
         [[CalendarManager sharedInstance] correctChangedDatesForEvents:dictionaryArrayForEventDateCorrection completionHandler:nil];
     }
     
-    NSError *saveError;
-    [self.managedObjectContext save:&saveError];
-    if (saveError) {
-        NSLog(@"Core Data Error in updateModelWithEventsDictionaries:calendarCorrections: %@", [saveError localizedDescription]);
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        FATAL_CORE_DATA_ERROR(error);
+        return;
     }
     
     [self saveRefreshTime:[NSDate date]];
@@ -257,10 +257,10 @@
         [self.managedObjectContext deleteObject:managedObject];
     }
     
-    NSError *saveError;
-    [self.managedObjectContext save:&saveError];
-    if (saveError) {
-        NSLog(@"Core Data Error in deleteAllData: %@", [saveError localizedDescription]);
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        FATAL_CORE_DATA_ERROR(error);
+        return;
     }
 }
 

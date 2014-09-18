@@ -17,6 +17,8 @@
 
 #define SPORTS_CATEGORIES @[@"Men's Track",@"Women's Track",@"Men's Cross Country",@"Women's Cross Country",@"Men's Basketball",@"Women's Basketball",@"Football",@"Baseball",@"Men's Golf",@"Women's Golf",@"Men's Soccer",@"Women's Soccer",@"Softball",@"Men's Tennis",@"Women's Tennis",@"Volleyball"]
 
+#define SPORTS_CATEGORIES_BUTTONS @[@"Volleyball", @"All Sports", @"Basketball", @"X-Country", @"Football", @"Golf", @"Soccer", @"Softball", @"Tennis", @"Track"]
+
 #define HOST_TYPE_CATEGORIES @[@"Men's Track",@"Women's Track",@"Men's Cross Country",@"Women's Cross Country",@"Men's Golf",@"Women's Golf",@"Men's Tennis",@"Women's Tennis",@"NCAA"]
 
 static NSString * const kSchoolName = @"Midwestern State";

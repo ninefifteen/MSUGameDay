@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *gameLocationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addEventToCalendarLabel;
 
-- (void)addEventToCalendar;
+- (void)addEventToCalendar:(Event *)event;
 
 @end
 

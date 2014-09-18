@@ -74,7 +74,7 @@
 
 - (void)configureCustomNavBarView
 {
-    NSArray *sportsCategoriesForButtons = @[@"Volleyball", @"All Sports", @"Basketball", @"X-Country", @"Football", @"Golf", @"Soccer", @"Softball", @"Tennis", @"Track"];
+    NSArray *sportsCategoriesForButtons = SPORTS_CATEGORIES_BUTTONS;
     
     self.rollingButtonScrollView.fixedButtonWidth = 88.0f;
     self.rollingButtonScrollView.spacingBetweenButtons = 2.0f;

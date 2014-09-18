@@ -25,6 +25,8 @@
 @property (nonatomic, strong) UIView *tableBackgroundView;
 @property (nonatomic, strong) UIView *searchTableBackgroundView;
 
+@property (nonatomic, strong) UIButton *currentCenterButton;
+
 @end
 
 @implementation MasterViewController
@@ -85,8 +87,8 @@
     self.rollingButtonScrollView.notCenterButtonTextColor = [UIColor grayColor];
     self.rollingButtonScrollView.centerButtonTextColor = MSU_GOLD_COLOR;
     self.rollingButtonScrollView.stopOnCenter = YES;
-    [self.rollingButtonScrollView createButtonArrayWithButtonTitles:sportsCategoriesForButtons andLayoutStyle:SShorizontalLayout];
     self.rollingButtonScrollView.ssRollingButtonScrollViewDelegate = self;
+    [self.rollingButtonScrollView createButtonArrayWithButtonTitles:sportsCategoriesForButtons andLayoutStyle:SShorizontalLayout];
 }
 
 - (void)configureSearchController
@@ -358,8 +360,23 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(localStartDate >= %@)", [NSDate date]];
-    [fetchRequest setPredicate:predicate];
+    if (self.currentCenterButton == nil || [self.currentCenterButton.titleLabel.text isEqualToString:@"All Sports"]) {
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(localStartDate >= %@)", [NSDate date]];
+        [fetchRequest setPredicate:predicate];
+        
+    } else {
+        
+        NSString *category;
+        if ([self.currentCenterButton.titleLabel.text isEqualToString:@"X-Country"]) {
+            category = @"Country";
+        } else {
+            category = self.currentCenterButton.titleLabel.text;
+        }
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category CONTAINS [c] %@ AND (localStartDate >= %@)", category, [NSDate date]];
+        [fetchRequest setPredicate:predicate];
+    }
     
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:YES];
     [fetchRequest setSortDescriptors:@[sortDescriptor]];
@@ -439,7 +456,24 @@
 
 - (void)rollingScrollViewButtonIsInCenter:(UIButton *)button ssRollingButtonScrollView:(SSRollingButtonScrollView *)rollingButtonScrollView
 {
-    NSLog(@"centered: %@", button.titleLabel.text);
+    self.currentCenterButton = button;
+    
+    _fetchedResultsController = nil;
+    [self.tableView reloadData];
+    if (!_isLoadingData) {
+        [self performFetch];
+    }
+}
+
+- (void)rollingScrollViewButtonPushed:(UIButton *)button ssRollingButtonScrollView:(SSRollingButtonScrollView *)rollingButtonScrollView
+{
+    self.currentCenterButton = button;
+    
+    _fetchedResultsController = nil;
+    [self.tableView reloadData];
+    if (!_isLoadingData) {
+        [self performFetch];
+    }
 }
 
 @end

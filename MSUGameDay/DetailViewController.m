@@ -49,7 +49,7 @@
                     }
                 }
                 
-                self.tableView.allowsSelection = @"YES";
+                self.tableView.allowsSelection = YES;
             });
         }];
         
@@ -72,7 +72,7 @@
                     }
                 }
                 
-                self.tableView.allowsSelection = @"YES";
+                self.tableView.allowsSelection = YES;
             });
         }];
     }

@@ -21,5 +21,8 @@
 @property (weak, nonatomic) IBOutlet SSRollingButtonScrollView *rollingButtonScrollView;
 @property (weak, nonatomic) IBOutlet UIView *customNavBarView;
 
+- (IBAction)leftScrollButtonPressed:(UIButton *)sender;
+- (IBAction)rightScrollButtonPressed:(UIButton *)sender;
+
 @end
 

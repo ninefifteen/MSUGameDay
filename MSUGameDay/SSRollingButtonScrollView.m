@@ -70,6 +70,7 @@
         [self setShowsHorizontalScrollIndicator:NO];
         [self setShowsVerticalScrollIndicator:NO];
         
+        //
         _width = self.bounds.size.width;
         _height = self.bounds.size.height;
         

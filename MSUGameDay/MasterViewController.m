@@ -86,6 +86,7 @@
     self.rollingButtonScrollView.centerButtonTextColor = MSU_GOLD_COLOR;
     self.rollingButtonScrollView.stopOnCenter = YES;
     [self.rollingButtonScrollView createButtonArrayWithButtonTitles:sportsCategoriesForButtons andLayoutStyle:SShorizontalLayout];
+    self.rollingButtonScrollView.ssRollingButtonScrollViewDelegate = self;
 }
 
 - (void)configureSearchController
@@ -422,6 +423,23 @@
     }
     NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicateArray];
     self.filteredEvents = [NSMutableArray arrayWithArray:[[self.fetchedResultsController fetchedObjects] filteredArrayUsingPredicate:predicate]];
+}
+
+- (IBAction)leftScrollButtonPressed:(UIButton *)sender
+{
+    NSLog(@"leftScrollButtonPressed");
+}
+
+- (IBAction)rightScrollButtonPressed:(UIButton *)sender
+{
+    NSLog(@"rightScrollButtonPressed");
+}
+
+#pragma mark - SSRollingButtonScrollViewDelegate
+
+- (void)rollingScrollViewButtonIsInCenter:(UIButton *)button ssRollingButtonScrollView:(SSRollingButtonScrollView *)rollingButtonScrollView
+{
+    NSLog(@"centered: %@", button.titleLabel.text);
 }
 
 @end

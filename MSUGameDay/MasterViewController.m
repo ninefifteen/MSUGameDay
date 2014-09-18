@@ -192,9 +192,10 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         
-        if (sender == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
+        UITableView *searchTableView = ((UITableViewController *)self.searchController.searchResultsController).tableView;
+        
+        if (sender == [searchTableView cellForRowAtIndexPath:[searchTableView indexPathForSelectedRow]]) {
             
-            NSLog(@"Here!");
             UITableView *tableView = ((UITableViewController *)self.searchController.searchResultsController).tableView;
             NSIndexPath *indexPath = [tableView indexPathForSelectedRow];
             Event *event = [self.filteredEvents objectAtIndex:indexPath.row];
@@ -206,7 +207,6 @@
             
         } else {
             
-            NSLog(@"And Here!");
             NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
             Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
             DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
@@ -335,9 +335,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (tableView == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
-        [self performSegueWithIdentifier:@"showDetail" sender:tableView];
-    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

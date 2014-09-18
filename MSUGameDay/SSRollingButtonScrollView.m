@@ -27,7 +27,6 @@
     NSInteger _topMostVisibleButtonIndex;
     NSInteger _bottomMostVisibleButtonIndex;
     
-    NSInteger _scrollViewSelectedIndex;
     CGPoint _lastOffset;
     NSTimeInterval _lastTimeCapture;
     CGFloat _scrollVelocity;
@@ -669,6 +668,22 @@
     if ([self.ssRollingButtonScrollViewDelegate respondsToSelector:@selector(scrollViewDidEndScrollingAnimation:)]) {
         [self.ssRollingButtonScrollViewDelegate scrollViewDidEndScrollingAnimation:scrollView];
     }
+}
+
+#pragma mark - API Methods
+
+- (void)advanceRollingButtonScrollViewIndexBy:(NSInteger)index
+{
+    NSInteger centerButtonIndex = [_rollingScrollViewButtons indexOfObject:_currentCenterButton];
+    NSInteger indexOfButtonToMoveToCenter = centerButtonIndex + index;
+        
+    if (indexOfButtonToMoveToCenter >= (NSInteger)[_rollingScrollViewButtons count]) {
+        indexOfButtonToMoveToCenter = 0;
+    } else if (indexOfButtonToMoveToCenter < 0) {
+        indexOfButtonToMoveToCenter = [_rollingScrollViewButtons count] - 1;
+    }
+    
+    [self scrollViewButtonPushed:_rollingScrollViewButtons[indexOfButtonToMoveToCenter]];
 }
 
 @end

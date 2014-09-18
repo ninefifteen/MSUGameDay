@@ -444,12 +444,12 @@
 
 - (IBAction)leftScrollButtonPressed:(UIButton *)sender
 {
-    NSLog(@"leftScrollButtonPressed");
+    [self.rollingButtonScrollView advanceRollingButtonScrollViewIndexBy:-1];
 }
 
 - (IBAction)rightScrollButtonPressed:(UIButton *)sender
 {
-    NSLog(@"rightScrollButtonPressed");
+    [self.rollingButtonScrollView advanceRollingButtonScrollViewIndexBy:1];
 }
 
 #pragma mark - SSRollingButtonScrollViewDelegate

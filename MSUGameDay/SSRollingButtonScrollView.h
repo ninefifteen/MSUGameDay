@@ -72,6 +72,8 @@ typedef enum {
 // be set prior to calling "createButtonArrayWithTitles:".
 - (void)createButtonArrayWithButtonTitles:(NSArray *)titles andLayoutStyle:(SScontentLayoutStyle)layoutStyle;
 
+- (void)advanceRollingButtonScrollViewIndexBy:(NSInteger)index;
+
 
 
 @end

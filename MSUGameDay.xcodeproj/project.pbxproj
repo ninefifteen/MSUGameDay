@@ -234,9 +234,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		45B114BD19C358D40044CAED /* MSUGameDay */ = {
+		45B114BD19C358D40044CAED /* Game Day */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 45B114E719C358D40044CAED /* Build configuration list for PBXNativeTarget "MSUGameDay" */;
+			buildConfigurationList = 45B114E719C358D40044CAED /* Build configuration list for PBXNativeTarget "Game Day" */;
 			buildPhases = (
 				0E7E9A17058145368CF1E602 /* Check Pods Manifest.lock */,
 				45B114BA19C358D40044CAED /* Sources */,
@@ -248,7 +248,7 @@
 			);
 			dependencies = (
 			);
-			name = MSUGameDay;
+			name = "Game Day";
 			productName = MSUGameDay;
 			productReference = 45B114BE19C358D40044CAED /* MSUGameDay.app */;
 			productType = "com.apple.product-type.application";
@@ -302,7 +302,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				45B114BD19C358D40044CAED /* MSUGameDay */,
+				45B114BD19C358D40044CAED /* Game Day */,
 				45B114DC19C358D40044CAED /* MSUGameDayTests */,
 			);
 		};
@@ -393,7 +393,7 @@
 /* Begin PBXTargetDependency section */
 		45B114DF19C358D40044CAED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 45B114BD19C358D40044CAED /* MSUGameDay */;
+			target = 45B114BD19C358D40044CAED /* Game Day */;
 			targetProxy = 45B114DE19C358D40044CAED /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -564,7 +564,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		45B114E719C358D40044CAED /* Build configuration list for PBXNativeTarget "MSUGameDay" */ = {
+		45B114E719C358D40044CAED /* Build configuration list for PBXNativeTarget "Game Day" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				45B114E819C358D40044CAED /* Debug */,

@@ -8,6 +8,8 @@
 
 #import "DetailViewController.h"
 #import "Event.h"
+#import <SDWebImage/UIButton+WebCache.h>
+#import "UIImageView+WebCache.h"
 
 @interface DetailViewController ()
 
@@ -126,10 +128,19 @@
             homeLabel.text = @"Home";
             
             UILabel *teamNameLabel = (UILabel *)[cell viewWithTag:203];
+            UIImageView *imageView = (UIImageView *)[cell viewWithTag:201];
+            
             if ([self.event.isHomeEvent isEqualToString:@"YES"]) {
+                
                 teamNameLabel.text = kSchoolName;
+                NSURL *url = [NSURL URLWithString:@"http://www.msumustangs.com/images/logos/m6.png"];
+                [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"NCAA_64"]];
+                
             } else {
+                
                 teamNameLabel.text = [self configureOpponentLabelTextFromTitle:self.event.title andCategory:self.event.category];
+                NSURL *url = [NSURL URLWithString:[self.event.opponentLogoUrl stringByReplacingOccurrencesOfString:@" " withString:@""]];
+                [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"NCAA_64"]];
             }
             
         } else {
@@ -138,10 +149,19 @@
             awayLabel.text = @"Away";
             
             UILabel *teamNameLabel = (UILabel *)[cell viewWithTag:203];
+            UIImageView *imageView = (UIImageView *)[cell viewWithTag:201];
+            
             if ([self.event.isHomeEvent isEqualToString:@"YES"]) {
+                
                 teamNameLabel.text = [self configureOpponentLabelTextFromTitle:self.event.title andCategory:self.event.category];
+                NSURL *url = [NSURL URLWithString:[self.event.opponentLogoUrl stringByReplacingOccurrencesOfString:@" " withString:@""]];
+                [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"NCAA_64"]];
+                
             } else {
+                
                 teamNameLabel.text = kSchoolName;
+                NSURL *url = [NSURL URLWithString:@"http://www.msumustangs.com/images/logos/m6.png"];
+                [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"NCAA_64"]];
             }
         }
     }
@@ -226,6 +246,18 @@
 {
     // Return NO if you do not want the specified item to be editable.
     return NO;
+}
+
+#pragma mark - Image Methods
+
+- (UIImage*)imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize;
+{
+    UIGraphicsBeginImageContext( newSize );
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 @end

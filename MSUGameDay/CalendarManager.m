@@ -22,7 +22,7 @@
     return _sharedInstance;
 }
 
-- (void)addEventToCalendarWithTitle:(NSString *)title startDate:(NSDate *)startDate endDate:(NSDate *)endDate completionHandler:(void (^)(BOOL success))completionHandler
+- (void)addEventToCalendarWithTitle:(NSString *)title startDate:(NSDate *)startDate endDate:(NSDate *)endDate completionHandler:(void (^)(NSString *eventIdentifier, BOOL success))completionHandler
 {
     EKEventStore *eventStore = [[EKEventStore alloc] init];
         
@@ -31,7 +31,7 @@
         if (error) {
             
             if (completionHandler != nil) {
-                completionHandler(NO);
+                completionHandler(nil, NO);
             }
             
             [self showCalendarErrorMessage:@"Unable To Add Event To Calendar." error:error];
@@ -39,7 +39,7 @@
         } else if (!granted) {
             
             if (completionHandler != nil) {
-                completionHandler(NO);
+                completionHandler(nil, NO);
             }
             
             [self showCalendarAccessNotEnabledMessage];
@@ -67,13 +67,15 @@
             if (!saveEventError) {
                 
                 if (completionHandler != nil) {
-                    completionHandler(YES);
+                    NSString *eventIdentifier = [NSString stringWithString:ekEvent.eventIdentifier];
+                    completionHandler(eventIdentifier, YES);
                 }
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Event Saved To Calendar!"
-                                                                         message:nil delegate:nil
-                                                               cancelButtonTitle:@"OK"
+                                                                         message:nil
+                                                                        delegate:nil
+                                                               cancelButtonTitle:nil
                                                                otherButtonTitles:nil, nil];
                     [alertView show];
                     [self performSelector:@selector(dismissAlertView:) withObject:alertView afterDelay:1.5f];
@@ -82,7 +84,7 @@
             } else {
                 
                 if (completionHandler != nil) {
-                    completionHandler(NO);
+                    completionHandler(nil, NO);
                 }
                 
                 [self showCalendarErrorMessage:@"Unable To Add Event To Calendar." error:saveEventError];

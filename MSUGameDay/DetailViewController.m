@@ -27,7 +27,55 @@
 
 - (void)addEventToCalendar:(Event *)event
 {
-    //
+    if ([self.event.isInCalendar isEqualToString:@"NO"]) {
+        
+        [[CalendarManager sharedInstance] addEventToCalendarWithTitle:self.event.title
+                                                            startDate:self.event.startDate
+                                                              endDate:self.event.endDate
+                                                    completionHandler:^(NSString *eventIdentifier, BOOL success) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                if (success) {
+                    
+                    self.event.eventIdentifier = eventIdentifier;
+                    self.event.isInCalendar = @"YES";
+                    [self.tableView reloadData];
+                    
+                    NSError *saveError;
+                    [self.managedObjectContext save:&saveError];
+                    if (saveError) {
+                        NSLog(@"Core Data Error in addEventToCalendar: %@", [saveError localizedDescription]);
+                    }
+                }
+                
+                self.tableView.allowsSelection = @"YES";
+            });
+        }];
+        
+    } else {
+        
+        [[CalendarManager sharedInstance] removeEventFromCalendarWithEventIdentifier:self.event.eventIdentifier completionHandler:^(BOOL success) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                if (success) {
+                    
+                    self.event.eventIdentifier = @"NONE";
+                    self.event.isInCalendar = @"NO";
+                    [self.tableView reloadData];
+                    
+                    NSError *saveError;
+                    [self.managedObjectContext save:&saveError];
+                    if (saveError) {
+                        NSLog(@"Core Data Error in deleteEventFromCalendar: %@", [saveError localizedDescription]);
+                    }
+                }
+                
+                self.tableView.allowsSelection = @"YES";
+            });
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -100,6 +148,14 @@
         
         static NSString *CellIdentifier = @"AddToCalendarCell";
         UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        cell.textLabel.textColor = self.view.tintColor;
+        
+        if ([self.event.isInCalendar isEqualToString:@"YES"]) {
+            cell.textLabel.text = @"Remove Event From Calendar";
+        } else {
+            cell.textLabel.text = @"Add Event To Calendar";
+        }
+        
         return cell;
         
     } else {
@@ -239,7 +295,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //
+    if (indexPath.section == 3 && indexPath.row == 0) {
+        self.tableView.allowsSelection = NO;
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        [self addEventToCalendar:self.event];
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

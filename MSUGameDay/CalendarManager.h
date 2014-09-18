@@ -14,7 +14,7 @@
 
 + (CalendarManager *)sharedInstance;
 
-- (void)addEventToCalendarWithTitle:(NSString *)title startDate:(NSDate *)startDate endDate:(NSDate *)endDate completionHandler:(void (^)(BOOL success))completionHandler;
+- (void)addEventToCalendarWithTitle:(NSString *)title startDate:(NSDate *)startDate endDate:(NSDate *)endDate completionHandler:(void (^)(NSString *eventIdentifier, BOOL success))completionHandler;
 - (void)removeEventFromCalendarWithEventIdentifier:(NSString *)eventIdentifier completionHandler:(void (^)(BOOL success))completionHandler;
 - (void)correctForEventsRemovedUsingCalendarApp:(NSArray *)eventIdentifiers completionHandler:(void (^)(NSArray *calendarCorrections, BOOL success))completionHandler;
 - (void)correctChangedDatesForEvents:(NSMutableArray *)dictionaryArray completionHandler:(void (^)(BOOL success))completionHandler;

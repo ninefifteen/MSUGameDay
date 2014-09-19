@@ -41,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		45B114BE19C358D40044CAED /* MSUGameDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSUGameDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45B114BE19C358D40044CAED /* Game Day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Day.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B114C219C358D40044CAED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45B114C319C358D40044CAED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		45B114C519C358D40044CAED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		45B114BF19C358D40044CAED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				45B114BE19C358D40044CAED /* MSUGameDay.app */,
+				45B114BE19C358D40044CAED /* Game Day.app */,
 				45B114DD19C358D40044CAED /* MSUGameDayTests.xctest */,
 			);
 			name = Products;
@@ -250,7 +250,7 @@
 			);
 			name = "Game Day";
 			productName = MSUGameDay;
-			productReference = 45B114BE19C358D40044CAED /* MSUGameDay.app */;
+			productReference = 45B114BE19C358D40044CAED /* Game Day.app */;
 			productType = "com.apple.product-type.application";
 		};
 		45B114DC19C358D40044CAED /* MSUGameDayTests */ = {

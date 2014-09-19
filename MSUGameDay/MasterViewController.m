@@ -174,10 +174,6 @@
         
         self.navBarWidth = self.navigationController.navigationBar.bounds.size.width;
         
-        //NSLog(@"navbar width: %f", self.navigationController.navigationBar.bounds.size.width);
-        //NSLog(@"customNavBarView frame: %f, %f, %f, %f", self.customNavBarView.frame.origin.x, self.customNavBarView.frame.origin.y, self.customNavBarView.frame.size.width, self.customNavBarView.frame.size.height);
-        //NSLog(@"rollingButtonScrollView frame: %f, %f, %f, %f", self.rollingButtonScrollView.frame.origin.x, self.rollingButtonScrollView.frame.origin.y, self.rollingButtonScrollView.frame.size.width, self.rollingButtonScrollView.frame.size.height);
-        
         CGFloat newWidth = self.navigationController.navigationBar.bounds.size.width - 32.0;
         CGRect newFrame = CGRectMake(self.customNavBarView.frame.origin.x, self.customNavBarView.frame.origin.y, newWidth, self.customNavBarView.frame.size.height);
         self.customNavBarView.frame = newFrame;
@@ -216,7 +212,6 @@
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
         controller.event = event;
         controller.managedObjectContext = self.managedObjectContext;
-        //self.splitViewController.displayModeButtonItem.title = @"Event List";
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }

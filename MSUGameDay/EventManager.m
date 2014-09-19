@@ -333,9 +333,7 @@
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSSSSS"];
-    
-    //NSString *eventsRefreshTime = [NSString stringWithFormat:@"Last updated on %@",[formatter stringFromDate:[NSDate date]]];
-    
+        
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:[formatter stringFromDate:refreshTime] forKey:@"eventsRefreshTime"];
     [defaults synchronize];

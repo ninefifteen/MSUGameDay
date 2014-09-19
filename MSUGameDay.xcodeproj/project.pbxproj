@@ -10,14 +10,7 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
-		<key>007707A935424138A4AD5605</key>
-		<dict>
-			<key>fileRef</key>
-			<string>503A17BF98894FCB94298843</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>18ED9129F2B94EED9B66F9D6</key>
+		<key>1C4E9EB1B1344369A5544ACB</key>
 		<dict>
 			<key>buildActionMask</key>
 			<string>2147483647</string>
@@ -59,7 +52,7 @@ fi
 				<string>45B114E019C358D40044CAED</string>
 				<string>45B114BF19C358D40044CAED</string>
 				<string>4EF33203DF054741889E6005</string>
-				<string>E1E1FDF14E114C6D9B3B9C3D</string>
+				<string>A84F7F7D56F04D13B498732E</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -167,7 +160,7 @@ fi
 				<string>45B1150519C39F7B0044CAED</string>
 				<string>45B1150319C39F6F0044CAED</string>
 				<string>45B1150119C39F660044CAED</string>
-				<string>007707A935424138A4AD5605</string>
+				<string>8619A63DF61D4D3F875C74CE</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -196,11 +189,11 @@ fi
 			<string>45B114E719C358D40044CAED</string>
 			<key>buildPhases</key>
 			<array>
-				<string>18ED9129F2B94EED9B66F9D6</string>
+				<string>1C4E9EB1B1344369A5544ACB</string>
 				<string>45B114BA19C358D40044CAED</string>
 				<string>45B114BB19C358D40044CAED</string>
 				<string>45B114BC19C358D40044CAED</string>
-				<string>9730690029734A73B8D4457B</string>
+				<string>B7E040CC00B248ED995A96F3</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -226,7 +219,7 @@ fi
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>path</key>
-			<string>Game Day.app</string>
+			<string>MSUGameDay.app</string>
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
@@ -833,7 +826,7 @@ fi
 		<key>45B114E819C358D40044CAED</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>E1E1FDF14E114C6D9B3B9C3D</string>
+			<string>A84F7F7D56F04D13B498732E</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
@@ -853,7 +846,7 @@ fi
 		<key>45B114E919C358D40044CAED</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>E1E1FDF14E114C6D9B3B9C3D</string>
+			<string>A84F7F7D56F04D13B498732E</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
@@ -1348,7 +1341,29 @@ fi
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>9730690029734A73B8D4457B</key>
+		<key>8619A63DF61D4D3F875C74CE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>503A17BF98894FCB94298843</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A84F7F7D56F04D13B498732E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B7E040CC00B248ED995A96F3</key>
 		<dict>
 			<key>buildActionMask</key>
 			<string>2147483647</string>
@@ -1371,21 +1386,6 @@ fi
 </string>
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
-		</dict>
-		<key>E1E1FDF14E114C6D9B3B9C3D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>

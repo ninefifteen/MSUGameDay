@@ -8,8 +8,8 @@
 
 #import "DetailViewController.h"
 #import "Event.h"
-//#import <SDWebImage/UIButton+WebCache.h>
-//#import "UIImageView+WebCache.h"
+#import <SDWebImage/UIButton+WebCache.h>
+#import "UIImageView+WebCache.h"
 
 @interface DetailViewController ()
 
@@ -190,13 +190,13 @@
                 
                 teamNameLabel.text = kSchoolName;
                 NSURL *url = [NSURL URLWithString:@"http://www.msumustangs.com/images/logos/m6.png"];
-                //[imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"NCAA_64"]];
+                [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"NCAA_64"]];
                 
             } else {
                 
                 teamNameLabel.text = [self configureOpponentLabelTextFromTitle:self.event.title andCategory:self.event.category];
                 NSURL *url = [NSURL URLWithString:[self.event.opponentLogoUrl stringByReplacingOccurrencesOfString:@" " withString:@""]];
-                //[imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"NCAA_64"]];
+                [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"NCAA_64"]];
             }
             
         } else {
@@ -211,13 +211,13 @@
                 
                 teamNameLabel.text = [self configureOpponentLabelTextFromTitle:self.event.title andCategory:self.event.category];
                 NSURL *url = [NSURL URLWithString:[self.event.opponentLogoUrl stringByReplacingOccurrencesOfString:@" " withString:@""]];
-                //[imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"NCAA_64"]];
+                [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"NCAA_64"]];
                 
             } else {
                 
                 teamNameLabel.text = kSchoolName;
                 NSURL *url = [NSURL URLWithString:@"http://www.msumustangs.com/images/logos/m6.png"];
-                //[imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"NCAA_64"]];
+                [imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"NCAA_64"]];
             }
         }
     }

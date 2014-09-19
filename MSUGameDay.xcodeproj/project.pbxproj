@@ -26,8 +26,6 @@
 		45B1150719C39F890044CAED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B1150619C39F890044CAED /* Foundation.framework */; };
 		45B1150B19C4B3CE0044CAED /* SSRollingButtonScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B1150A19C4B3CE0044CAED /* SSRollingButtonScrollView.m */; };
 		45B1156319CA44700044CAED /* TableBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45B1156219CA44700044CAED /* TableBackgroundView.xib */; };
-		45B1156519CA7BBF0044CAED /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B1156419CA7BBF0044CAED /* ImageIO.framework */; };
-		8703782704F5417B8B55EC43 /* libPods-MSUGameDay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5006C8A0E34B4435B891B58F /* libPods-MSUGameDay.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +73,6 @@
 		45B1156219CA44700044CAED /* TableBackgroundView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableBackgroundView.xib; sourceTree = "<group>"; };
 		45B1156419CA7BBF0044CAED /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		5006C8A0E34B4435B891B58F /* libPods-MSUGameDay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MSUGameDay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F50B0FE1A20A4E5997E9AB12 /* Pods-MSUGameDay.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSUGameDay.xcconfig"; path = "Pods/Pods-MSUGameDay.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +80,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45B1156519CA7BBF0044CAED /* ImageIO.framework in Frameworks */,
 				45B1150719C39F890044CAED /* Foundation.framework in Frameworks */,
 				45B1150519C39F7B0044CAED /* UIKit.framework in Frameworks */,
 				45B1150319C39F6F0044CAED /* CoreGraphics.framework in Frameworks */,
 				45B1150119C39F660044CAED /* EventKit.framework in Frameworks */,
-				8703782704F5417B8B55EC43 /* libPods-MSUGameDay.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +107,6 @@
 				45B114C019C358D40044CAED /* MSUGameDay */,
 				45B114E019C358D40044CAED /* MSUGameDayTests */,
 				45B114BF19C358D40044CAED /* Products */,
-				F50B0FE1A20A4E5997E9AB12 /* Pods-MSUGameDay.xcconfig */,
 				4EF33203DF054741889E6005 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -238,11 +232,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45B114E719C358D40044CAED /* Build configuration list for PBXNativeTarget "MSUGameDay" */;
 			buildPhases = (
-				0E7E9A17058145368CF1E602 /* Check Pods Manifest.lock */,
 				45B114BA19C358D40044CAED /* Sources */,
 				45B114BB19C358D40044CAED /* Frameworks */,
 				45B114BC19C358D40044CAED /* Resources */,
-				F53102F76BEB4DB1898C7CA2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -328,39 +320,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0E7E9A17058145368CF1E602 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F53102F76BEB4DB1898C7CA2 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-MSUGameDay-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		45B114BA19C358D40044CAED /* Sources */ = {
@@ -498,7 +457,6 @@
 		};
 		45B114E819C358D40044CAED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F50B0FE1A20A4E5997E9AB12 /* Pods-MSUGameDay.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MSUGameDay/Info.plist;
@@ -509,7 +467,6 @@
 		};
 		45B114E919C358D40044CAED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F50B0FE1A20A4E5997E9AB12 /* Pods-MSUGameDay.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MSUGameDay/Info.plist;

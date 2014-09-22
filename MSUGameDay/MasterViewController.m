@@ -19,13 +19,13 @@
 @property (nonatomic) BOOL updateAtStartUp;
 @property (nonatomic) CGFloat navBarWidth;
 
-@property (nonatomic, strong) UISearchController *searchController;
-@property (nonatomic, strong) NSMutableArray *filteredEvents;
+@property (strong, nonatomic) UISearchController *searchController;
+@property (strong, nonatomic) NSMutableArray *filteredEvents;
 
-@property (nonatomic, strong) UIView *tableBackgroundView;
-@property (nonatomic, strong) UIView *searchTableBackgroundView;
+@property (strong, nonatomic) UIView *tableBackgroundView;
+@property (strong, nonatomic) UIView *searchTableBackgroundView;
 
-@property (nonatomic, strong) UIButton *currentCenterButton;
+@property (strong, nonatomic) UIButton *currentCenterButton;
 
 @end
 

@@ -239,8 +239,12 @@
         
         if ([self.fetchedResultsController.fetchedObjects count] > 0) {
             return [self.fetchedResultsController.fetchedObjects count];
-        } else {
+        } else if (self.updateAtStartUp) {
             return 1;
+        } else if (!self.isLoadingData) {
+            return 1;
+        } else {
+            return 0;
         }
         
     } else {

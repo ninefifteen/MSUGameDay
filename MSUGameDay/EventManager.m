@@ -97,13 +97,13 @@
             } else {
                 NSLog(@"Unable To Download Event Data. HTTP Response Status Code: %li", (long)httpResponse.statusCode);
                 if (completionHandler != nil) {
-                    completionHandler(YES);
+                    completionHandler(NO);
                 }
             }
         } else {
             NSLog(@"Unable To Download Event Data. Connection Error: %@", error);
             if (completionHandler != nil) {
-                completionHandler(YES);
+                completionHandler(NO);
             }
         }
         

@@ -361,7 +361,7 @@
     
     if (self.currentCenterButton == nil || [self.currentCenterButton.titleLabel.text isEqualToString:@"All Sports"]) {
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(localStartDate >= %@)", [NSDate date]];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(localStartDate >= %@)", [[NSDate date] dateByAddingTimeInterval:-86400 * 2]];
         [fetchRequest setPredicate:predicate];
         
     } else {
@@ -373,7 +373,7 @@
             category = self.currentCenterButton.titleLabel.text;
         }
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category CONTAINS [c] %@ AND (localStartDate >= %@)", category, [NSDate date]];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category CONTAINS [c] %@ AND (localStartDate >= %@)", category, [[NSDate date] dateByAddingTimeInterval:-86400 * 2]];
         [fetchRequest setPredicate:predicate];
     }
     
